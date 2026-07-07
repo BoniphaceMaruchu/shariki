@@ -7,8 +7,12 @@
   <meta name='description' content='Shariki is a hands-on venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to turn early traction into stronger, growth-ready, access-expanding businesses.'>
   <meta name='theme-color' content='#071426'>
   <meta property='og:title' content='Shariki | A Selfless Solutions Venture-Building Initiative'>
-  <meta property='og:description' content='A hands-on venture-building MVP helping promising Tanzanian entrepreneurs become stronger, growth-ready, access-expanding businesses.'>
+  <meta property='og:description' content='Shariki is a hands-on venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to turn early traction into stronger, growth-ready, access-expanding businesses.'>
   <meta property='og:type' content='website'>
+  <meta property='og:url' content='https://boniphacemaruchu.github.io/shariki/'>
+  <meta name='twitter:card' content='summary'>
+  <meta name='twitter:title' content='Shariki | A Selfless Solutions Venture-Building Initiative'>
+  <meta name='twitter:description' content='Shariki is a hands-on venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to turn early traction into stronger, growth-ready, access-expanding businesses.'>
   <link rel='icon' href='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2218%22 fill=%22%23112E62%22/%3E%3Cpath d=%22M17 40c9-2 14-16 30-17%22 fill=%22none%22 stroke=%22%23FDB62F%22 stroke-width=%226%22 stroke-linecap=%22round%22/%3E%3Ctext x=%2232%22 y=%2242%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2228%22 font-weight=%22800%22 fill=%22%23FFFFFF%22%3ES%3C/text%3E%3C/svg%3E'>
   <style>
     :root {
@@ -201,8 +205,10 @@
       font-weight: 860;
     }
 
+    .headline-line { display: block; }
+
     .hero-lead {
-      margin: 24px 0 0;
+      margin: 28px 0 0;
       max-width: 780px;
       color: var(--muted);
       font-size: 18.5px;
@@ -210,9 +216,9 @@
     }
 
     .parent-statement {
-      margin: 20px 0 0;
+      margin: 24px 0 0;
       max-width: 720px;
-      padding: 14px 16px;
+      padding: 15px 18px;
       border-left: 4px solid var(--gold);
       background: rgba(255,255,255,0.075);
       color: var(--gold-soft);
@@ -222,7 +228,7 @@
       box-shadow: inset 0 0 0 1px rgba(248,213,138,0.09);
     }
 
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
 
     .btn {
       display: inline-flex;
@@ -242,7 +248,7 @@
     .btn-secondary { background: rgba(255,255,255,0.06); color: var(--text); border-color: rgba(248,213,138,0.24); }
 
     .hero-note {
-      margin-top: 18px;
+      margin-top: 20px;
       max-width: 720px;
       color: var(--muted-2);
       font-size: 14px;
@@ -251,7 +257,6 @@
 
     .dashboard,
     .card,
-    .cred-item,
     .step,
     .fact,
     .discovery-lead,
@@ -338,21 +343,38 @@
     .focus-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
     .cred-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin: 14px 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin: 18px 0 0;
+      padding: 15px 18px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(248,213,138,0.2);
+      background: rgba(16,34,63,0.78);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.14);
     }
 
     .cred-item {
-      min-height: 104px;
-      padding: 18px;
-      border-top: 3px solid var(--gold);
-      background: rgba(16,34,63,0.84);
+      position: relative;
+      padding: 7px 17px;
+      color: var(--text);
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 780;
+      white-space: nowrap;
     }
 
-    .cred-item strong { display: block; color: var(--text); font-size: 18px; line-height: 1.2; margin-bottom: 8px; }
-    .cred-item span { display: block; color: var(--muted); font-size: 14px; line-height: 1.52; }
+    .cred-item + .cred-item::before {
+      content: '·';
+      position: absolute;
+      left: -3px;
+      color: var(--gold-soft);
+      font-weight: 900;
+    }
+
+    .cred-item span { color: var(--muted); }
 
     section.block { padding-top: 92px; scroll-margin-top: 100px; }
 
@@ -384,8 +406,8 @@
     .card li + li { margin-top: 8px; }
 
     .light-band {
-      margin: 92px -22px 0;
-      padding: 62px 22px;
+      margin: 96px -22px 0;
+      padding: 68px 22px;
       background: linear-gradient(180deg, #ffffff, var(--light));
       color: var(--light-ink);
       border-top: 3px solid var(--gold);
@@ -397,7 +419,7 @@
     .light-band .section-copy, .light-band .card p, .light-band .card li { color: var(--light-muted); }
     .light-band .rule { background: var(--gold); }
     .light-band .card {
-      background: #ffffff;
+      background: rgba(255,255,255,0.88);
       border-color: rgba(20,49,99,0.12);
       box-shadow: var(--soft-shadow);
     }
@@ -527,7 +549,6 @@
       h1 { font-size: 48px; }
       h2 { font-size: 36px; }
       .hero, .section-head, .mvp-panel, .founder-grid, .contact-band, .footer-grid { grid-template-columns: 1fr; }
-      .cred-strip, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 780px) {
@@ -538,14 +559,19 @@
       .nav-links a { padding: 10px 9px; }
       .hero { padding-top: 42px; }
       h1 { font-size: 35px; line-height: 1.1; }
+      .headline-line { display: inline; }
+      .headline-line + .headline-line::before { content: ' '; }
       h2 { font-size: 29px; }
       .hero-lead, .section-copy { font-size: 16px; }
-      .metric-grid, .cred-strip, .grid-2, .grid-3, .grid-4, .split-list, .facts-grid { grid-template-columns: 1fr; }
+      .metric-grid, .grid-2, .grid-3, .grid-4, .split-list, .facts-grid { grid-template-columns: 1fr; }
+      .cred-strip { align-items: stretch; flex-direction: column; padding: 14px; }
+      .cred-item { padding: 10px 12px; white-space: normal; text-align: center; }
+      .cred-item + .cred-item::before { content: ''; left: 50%; top: -2px; width: 42px; height: 1px; background: rgba(248,213,138,0.35); transform: translateX(-50%); }
       .dashboard-head { align-items: flex-start; flex-direction: column; gap: 10px; }
       .discovery-lead, .mvp-summary, .site-footer, .quote-panel { padding: 22px; }
       .quote-panel { grid-template-columns: 1fr; }
       .quote-panel::before { width: 76px; height: 3px; min-height: 3px; }
-      .light-band { margin-left: -16px; margin-right: -16px; padding: 48px 16px; }
+      .light-band { margin-left: -16px; margin-right: -16px; padding: 52px 16px; }
       .discovery-lead p, .quote-panel p { font-size: 20px; }
       .mvp-summary h3, .founder-name { font-size: 25px; }
       .step { grid-template-columns: 1fr; }
@@ -582,7 +608,7 @@
       <section class='hero' aria-labelledby='hero-title'>
         <div class='hero-copy fade-up'>
           <div class='badge'>A Selfless Solutions venture-building initiative</div>
-          <h1 id='hero-title'>Helping promising Tanzanian entrepreneurs turn early traction into stronger, growth-ready, access-expanding businesses.</h1>
+          <h1 id='hero-title'><span class='headline-line'>Helping promising Tanzanian entrepreneurs</span><span class='headline-line'>turn early traction into stronger, growth-ready,</span><span class='headline-line'>access-expanding businesses.</span></h1>
           <p class='hero-lead'>Shariki is a hands-on venture-building MVP under Selfless Solutions. We support selected entrepreneurs with execution discipline, financial systems, customer learning, partnerships, and accountability so their businesses can grow beyond survival.</p>
           <p class='parent-statement'>Built under Selfless Solutions to expand education and economic opportunity in Tanzania.</p>
           <div class='hero-actions'>
@@ -612,10 +638,10 @@
       </section>
 
       <section class='cred-strip fade-up' aria-label='Shariki credibility summary'>
-        <div class='cred-item'><strong>Under Selfless Solutions</strong><span>A distinct program connected to a trusted Tanzania-focused nonprofit.</span></div>
-        <div class='cred-item'><strong>Arusha MVP</strong><span>Starting locally, close to founders, customers, and practical relationships.</span></div>
-        <div class='cred-item'><strong>3-5 founders</strong><span>A deliberately small cohort for depth, discipline, and real learning.</span></div>
-        <div class='cred-item'><strong>90-day support sprint</strong><span>Focused hands-on support around execution, finance, market access, and partnerships.</span></div>
+        <div class='cred-item'>Under Selfless Solutions</div>
+        <div class='cred-item'>Arusha MVP</div>
+        <div class='cred-item'>3-5 founders</div>
+        <div class='cred-item'>90-day support sprint</div>
       </section>
 
       <section id='clarity' class='block light-band'>
