@@ -10,21 +10,26 @@
   <meta property='og:type' content='website'>
   <style>
     :root {
-      --bg: #07111f;
-      --bg2: #081426;
-      --navy: #163265;
-      --surface: #101d2e;
-      --surface2: #17263a;
-      --gold: #f7b539;
-      --gold2: #ffd36a;
-      --text: #f8fafc;
-      --muted: #b8c7d9;
-      --muted2: #91a3b9;
-      --border: rgba(255, 255, 255, 0.12);
-      --gold-border: rgba(255, 211, 106, 0.34);
-      --ink: #07111f;
+      --bg: #071426;
+      --bg2: #0b1b34;
+      --navy: #143163;
+      --navy2: #112e62;
+      --surface: #10223f;
+      --surface2: #18345f;
+      --gold: #f3ae31;
+      --gold2: #fdb62f;
+      --gold-soft: #f8d58a;
+      --light: #f5f7fb;
+      --light-ink: #112e62;
+      --light-muted: #4b5f7a;
+      --text: #ffffff;
+      --muted: #c7d2e3;
+      --muted2: #aebed4;
+      --border: rgba(255, 255, 255, 0.14);
+      --gold-border: rgba(248, 213, 138, 0.38);
+      --ink: #071426;
       --radius: 8px;
-      --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      --shadow: 0 18px 44px rgba(2, 8, 23, 0.24);
       --max: 1180px;
     }
 
@@ -36,10 +41,8 @@
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
       background:
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(180deg, rgba(255,255,255,0.025) 1px, transparent 1px),
-        linear-gradient(180deg, #07111f 0%, #081426 48%, #0b1728 100%);
-      background-size: 56px 56px, 56px 56px, auto;
+        linear-gradient(180deg, rgba(255,255,255,0.04), transparent 260px),
+        linear-gradient(135deg, #071426 0%, #10223f 48%, #071426 100%);
       min-height: 100vh;
     }
 
@@ -48,14 +51,19 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background:
-        linear-gradient(120deg, rgba(247,181,57,0.13), transparent 34%),
-        linear-gradient(270deg, rgba(22,50,101,0.52), transparent 42%);
-      opacity: 0.82;
+      background: linear-gradient(120deg, rgba(243,174,49,0.13), transparent 32%, rgba(255,255,255,0.035) 68%, transparent 100%);
+      opacity: 0.75;
     }
 
     a { color: inherit; text-decoration: none; }
     p, h1, h2, h3, h4 { letter-spacing: 0; }
+
+    .brand-line {
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--gold));
+      position: relative;
+      z-index: 30;
+    }
 
     .container {
       width: min(100%, var(--max));
@@ -68,13 +76,13 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(7, 17, 31, 0.92);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(7, 20, 38, 0.94);
+      border-bottom: 1px solid rgba(248,213,138,0.18);
       backdrop-filter: blur(16px);
     }
 
     .nav {
-      min-height: 72px;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -85,25 +93,26 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      min-width: 218px;
+      min-width: 228px;
     }
 
     .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius);
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      color: var(--ink);
-      font-size: 22px;
+      background: #ffffff;
+      color: var(--navy2);
+      font-size: 20px;
       font-weight: 900;
-      border: 1px solid var(--gold-border);
+      border: 3px solid var(--gold);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
       flex: 0 0 auto;
     }
 
-    .brand-name { font-size: 18px; font-weight: 850; line-height: 1; }
-    .brand-meta { margin-top: 5px; color: var(--muted2); font-size: 12px; line-height: 1.25; }
+    .brand-name { font-size: 20px; font-weight: 850; line-height: 1; }
+    .brand-meta { margin-top: 6px; color: var(--muted); font-size: 12px; line-height: 1.25; }
 
     .nav-links {
       display: flex;
@@ -128,14 +137,14 @@
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--text);
-      background: rgba(255,255,255,0.08);
+      background: rgba(248,213,138,0.12);
     }
 
     .hero {
-      padding: 54px 0 26px;
+      padding: 58px 0 30px;
       display: grid;
       grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.62fr);
-      gap: 28px;
+      gap: 30px;
       align-items: center;
     }
 
@@ -147,9 +156,9 @@
       min-height: 34px;
       padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(247,181,57,0.34);
-      background: rgba(247,181,57,0.1);
-      color: var(--gold2);
+      border: 1px solid rgba(248,213,138,0.44);
+      background: rgba(243,174,49,0.12);
+      color: var(--gold-soft);
       font-size: 13px;
       line-height: 1.25;
     }
@@ -166,7 +175,7 @@
     h1 {
       margin: 24px 0 0;
       max-width: 960px;
-      font-size: 64px;
+      font-size: 62px;
       line-height: 1.04;
       font-weight: 860;
     }
@@ -177,6 +186,18 @@
       color: var(--muted);
       font-size: 19px;
       line-height: 1.72;
+    }
+
+    .parent-statement {
+      margin: 18px 0 0;
+      max-width: 720px;
+      padding: 13px 16px;
+      border-left: 4px solid var(--gold);
+      background: rgba(255,255,255,0.07);
+      color: var(--gold-soft);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 750;
     }
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -195,8 +216,8 @@
     }
 
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--gold); color: var(--ink); box-shadow: 0 16px 32px rgba(247,181,57,0.2); }
-    .btn-secondary { background: rgba(255,255,255,0.055); color: var(--text); border-color: var(--border); }
+    .btn-primary { background: var(--gold2); color: var(--ink); box-shadow: 0 16px 32px rgba(243,174,49,0.2); }
+    .btn-secondary { background: rgba(255,255,255,0.06); color: var(--text); border-color: rgba(248,213,138,0.22); }
 
     .hero-note {
       margin-top: 18px;
@@ -215,11 +236,16 @@
     .mvp-summary {
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025)), rgba(16,29,46,0.86);
-      box-shadow: 0 16px 38px rgba(0,0,0,0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)), rgba(16,34,63,0.92);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.18);
     }
 
-    .dashboard { overflow: hidden; box-shadow: var(--shadow); }
+    .dashboard {
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border-color: rgba(248,213,138,0.22);
+      background: linear-gradient(180deg, rgba(20,49,99,0.98), rgba(16,34,63,0.94));
+    }
 
     .dashboard-head {
       display: flex;
@@ -229,15 +255,15 @@
       padding: 18px 18px 0;
     }
 
-    .dashboard-title { color: var(--gold2); font-size: 13px; font-weight: 800; }
+    .dashboard-title { color: var(--gold-soft); font-size: 13px; font-weight: 800; }
 
     .status-chip {
       min-height: 28px;
       padding: 6px 9px;
       border-radius: 999px;
-      background: rgba(124,207,154,0.12);
-      color: #bff2cc;
-      border: 1px solid rgba(124,207,154,0.28);
+      background: rgba(248,213,138,0.16);
+      color: var(--gold-soft);
+      border: 1px solid rgba(248,213,138,0.32);
       font-size: 12px;
       white-space: nowrap;
     }
@@ -252,9 +278,9 @@
     .metric {
       min-height: 112px;
       padding: 14px;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(248,213,138,0.18);
       border-radius: var(--radius);
-      background: rgba(8,20,38,0.68);
+      background: rgba(7,20,38,0.58);
     }
 
     .metric strong { display: block; color: var(--text); font-size: 29px; line-height: 1; margin-bottom: 10px; }
@@ -269,7 +295,7 @@
       align-items: start;
       padding: 12px;
       border-radius: var(--radius);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(248,213,138,0.16);
       background: rgba(255,255,255,0.04);
     }
 
@@ -279,8 +305,8 @@
       display: grid;
       place-items: center;
       border-radius: 6px;
-      background: rgba(247,181,57,0.16);
-      color: var(--gold2);
+      background: var(--gold2);
+      color: var(--ink);
       font-size: 12px;
       font-weight: 900;
     }
@@ -289,7 +315,7 @@
     .focus-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
     .quick-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 8px 0 0; }
-    .quick-item { min-height: 122px; padding: 18px; border-top: 3px solid rgba(247,181,57,0.74); }
+    .quick-item { min-height: 122px; padding: 18px; border-top: 3px solid var(--gold); background: rgba(16,34,63,0.9); }
     .quick-item strong { display: block; color: var(--text); font-size: 24px; line-height: 1.08; margin-bottom: 10px; }
     .quick-item span { display: block; color: var(--muted); font-size: 14px; line-height: 1.52; }
 
@@ -303,10 +329,10 @@
       margin-bottom: 22px;
     }
 
-    .section-label { color: var(--gold2); font-size: 14px; font-weight: 800; margin-bottom: 10px; }
+    .section-label { color: var(--gold-soft); font-size: 14px; font-weight: 800; margin-bottom: 10px; }
     h2 { margin: 0; font-size: 44px; line-height: 1.08; font-weight: 820; }
     .section-copy { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.72; max-width: 740px; }
-    .rule { width: 86px; height: 4px; border-radius: 999px; background: var(--gold); margin-top: 18px; }
+    .rule { width: 86px; height: 3px; border-radius: 999px; background: var(--gold); margin-top: 18px; }
 
     .grid-2, .grid-3, .grid-4, .split-list { display: grid; gap: 14px; }
     .grid-2, .split-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -314,13 +340,36 @@
     .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
     .card { min-height: 100%; padding: 22px; }
-    .card.gold-edge { border-top: 3px solid rgba(247,181,57,0.78); }
-    .card.dark { background: rgba(8,20,38,0.72); }
+    .card.gold-edge { border-top: 3px solid var(--gold); }
+    .card.dark { background: rgba(7,20,38,0.64); }
     .card h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 800; }
     .card p, .card li { color: var(--muted); font-size: 15.5px; line-height: 1.64; }
     .card p { margin: 0; }
     .card ul { margin: 0; padding-left: 18px; }
     .card li + li { margin-top: 8px; }
+
+    .light-band {
+      margin: 82px -22px 0;
+      padding: 54px 22px;
+      background: var(--light);
+      color: var(--light-ink);
+      border-top: 3px solid var(--gold);
+      border-bottom: 1px solid rgba(20,49,99,0.12);
+    }
+
+    .light-band .section-label { color: #946412; }
+    .light-band h2, .light-band .card h3 { color: var(--light-ink); }
+    .light-band .section-copy, .light-band .card p, .light-band .card li { color: var(--light-muted); }
+    .light-band .rule { background: var(--gold); }
+    .light-band .card {
+      background: #ffffff;
+      border-color: rgba(20,49,99,0.12);
+      box-shadow: 0 12px 26px rgba(17,46,98,0.08);
+    }
+    .light-band .card.dark { background: #eaf0f8; }
+    .light-band .check-list li { background: #ffffff; border-color: rgba(20,49,99,0.12); color: var(--light-muted); }
+    .light-band .not-list li { background: #f0f4fa; }
+    .light-band .mini-label { background: rgba(243,174,49,0.18); color: #80550f; border-color: rgba(243,174,49,0.28); }
 
     .mini-label {
       display: inline-flex;
@@ -329,9 +378,9 @@
       margin-bottom: 14px;
       padding: 6px 9px;
       border-radius: 999px;
-      background: rgba(247,181,57,0.12);
-      color: var(--gold2);
-      border: 1px solid rgba(247,181,57,0.24);
+      background: rgba(243,174,49,0.13);
+      color: var(--gold-soft);
+      border: 1px solid rgba(248,213,138,0.26);
       font-size: 12px;
       font-weight: 800;
     }
@@ -343,7 +392,7 @@
       padding: 11px 12px 11px 38px;
       border-radius: var(--radius);
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.1);
       color: var(--muted);
       line-height: 1.5;
     }
@@ -359,45 +408,61 @@
       background: var(--gold);
     }
 
-    .not-list li::before { background: transparent; border: 2px solid rgba(255,255,255,0.38); }
+    .not-list li::before { background: transparent; border: 2px solid rgba(20,49,99,0.34); }
 
     .discovery-lead {
       margin-bottom: 14px;
       padding: 26px;
       border-color: var(--gold-border);
-      background: linear-gradient(90deg, rgba(247,181,57,0.14), rgba(247,181,57,0.04)), rgba(16,29,46,0.9);
+      background: linear-gradient(90deg, rgba(243,174,49,0.13), rgba(243,174,49,0.04)), rgba(16,34,63,0.94);
     }
 
     .discovery-lead p { margin: 0; max-width: 980px; color: var(--text); font-size: 25px; line-height: 1.36; font-weight: 780; }
 
     .mvp-panel { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 14px; align-items: stretch; }
-    .mvp-summary { padding: 28px; border-color: var(--gold-border); background: linear-gradient(180deg, rgba(247,181,57,0.14), rgba(247,181,57,0.04)), rgba(16,29,46,0.9); }
+    .mvp-summary { padding: 28px; border-color: var(--gold-border); background: linear-gradient(180deg, rgba(243,174,49,0.12), rgba(243,174,49,0.035)), rgba(16,34,63,0.94); }
     .mvp-summary h3 { margin: 0 0 14px; font-size: 30px; line-height: 1.15; }
     .mvp-summary p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
 
     .facts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-    .fact { min-height: 118px; padding: 18px; background: rgba(8,20,38,0.64); }
+    .fact { min-height: 118px; padding: 18px; background: rgba(7,20,38,0.56); }
     .fact span { display: block; color: var(--muted2); font-size: 13px; margin-bottom: 10px; }
     .fact strong { display: block; color: var(--text); font-size: 23px; line-height: 1.18; }
 
     .steps { display: grid; gap: 12px; }
     .step { display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 18px; }
-    .step-no { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--radius); background: var(--gold); color: var(--ink); font-weight: 900; }
+    .step-no { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--radius); background: var(--gold2); color: var(--ink); font-weight: 900; }
     .step h3 { margin: 0 0 6px; font-size: 22px; line-height: 1.16; }
     .step p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
 
     .pill-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
-    .pill { display: inline-flex; align-items: center; min-height: 34px; padding: 8px 10px; border: 1px solid rgba(255,255,255,0.1); border-radius: 999px; background: rgba(255,255,255,0.045); color: var(--muted); font-size: 13px; line-height: 1.2; }
+    .pill { display: inline-flex; align-items: center; min-height: 34px; padding: 8px 10px; border: 1px solid rgba(248,213,138,0.16); border-radius: 999px; background: rgba(255,255,255,0.045); color: var(--muted); font-size: 13px; line-height: 1.2; }
 
     .founder-grid { display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); gap: 14px; }
     .founder-name { font-size: 32px; line-height: 1.1; margin: 0 0 12px; font-weight: 840; }
 
     .contact-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr); gap: 14px; align-items: stretch; }
     .contact-lines { display: grid; gap: 10px; }
-    .contact-line { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px; border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); background: rgba(255,255,255,0.04); color: var(--muted); overflow-wrap: anywhere; }
-    .contact-key { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 6px; background: rgba(247,181,57,0.14); color: var(--gold2); font-weight: 900; font-size: 12px; flex: 0 0 auto; }
+    .contact-line { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px; border: 1px solid rgba(248,213,138,0.16); border-radius: var(--radius); background: rgba(255,255,255,0.04); color: var(--muted); overflow-wrap: anywhere; }
+    .contact-key { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 6px; background: var(--gold2); color: var(--ink); font-weight: 900; font-size: 12px; flex: 0 0 auto; }
 
-    .footer { padding: 72px 0 40px; color: var(--muted2); font-size: 14px; line-height: 1.6; }
+    .site-footer {
+      margin: 82px 0 40px;
+      padding: 34px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, var(--navy), var(--navy2));
+      border: 1px solid rgba(248,213,138,0.24);
+      color: var(--text);
+      box-shadow: var(--shadow);
+    }
+
+    .footer-rule { width: 92px; height: 3px; background: var(--gold); border-radius: 999px; margin-bottom: 22px; }
+    .footer-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr); gap: 28px; align-items: start; }
+    .footer-brand { font-size: 24px; line-height: 1; font-weight: 850; margin-bottom: 12px; }
+    .site-footer p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 760px; }
+    .footer-contact { display: grid; gap: 10px; color: var(--gold-soft); font-size: 14px; line-height: 1.5; }
+    .footer-meta { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(248,213,138,0.2); color: var(--muted); font-size: 13px; }
+
     .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 600ms ease; }
     .fade-up.is-visible { opacity: 1; transform: translateY(0); }
 
@@ -410,7 +475,7 @@
     @media (max-width: 1080px) {
       h1 { font-size: 50px; }
       h2 { font-size: 38px; }
-      .hero, .section-head, .mvp-panel, .founder-grid, .contact-band { grid-template-columns: 1fr; }
+      .hero, .section-head, .mvp-panel, .founder-grid, .contact-band, .footer-grid { grid-template-columns: 1fr; }
       .quick-strip, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
@@ -426,7 +491,8 @@
       .hero-lead, .section-copy { font-size: 16px; }
       .metric-grid, .quick-strip, .grid-2, .grid-3, .grid-4, .split-list, .facts-grid { grid-template-columns: 1fr; }
       .dashboard-head { align-items: flex-start; flex-direction: column; gap: 10px; }
-      .discovery-lead, .mvp-summary { padding: 22px; }
+      .discovery-lead, .mvp-summary, .site-footer { padding: 22px; }
+      .light-band { margin-left: -16px; margin-right: -16px; padding: 44px 16px; }
       .discovery-lead p { font-size: 21px; }
       .mvp-summary h3, .founder-name { font-size: 26px; }
       .step { grid-template-columns: 1fr; }
@@ -435,6 +501,7 @@
   </style>
 </head>
 <body>
+  <div class='brand-line' aria-hidden='true'></div>
   <div class='nav-wrap'>
     <div class='container nav'>
       <a class='brand' href='#top' aria-label='Shariki home'>
@@ -464,6 +531,7 @@
           <div class='badge'>A Selfless Solutions venture-building initiative</div>
           <h1 id='hero-title'>Helping promising Tanzanian entrepreneurs turn early traction into stronger, investable, access-expanding businesses.</h1>
           <p class='hero-lead'>Shariki is a hands-on venture-building MVP under Selfless Solutions. We support selected entrepreneurs with execution discipline, financial systems, customer learning, partnerships, and accountability so their businesses can grow beyond survival.</p>
+          <p class='parent-statement'>Built under Selfless Solutions to expand education and economic opportunity in Tanzania.</p>
           <div class='hero-actions'>
             <a class='btn btn-primary' href='#model'>Explore the model</a>
             <a class='btn btn-secondary' href='#contact'>Start a conversation</a>
@@ -497,7 +565,7 @@
         <div class='quick-item'><strong>Access lens</strong><span>Priority goes to ventures that can reach underserved communities through stronger business models.</span></div>
       </section>
 
-      <section id='clarity' class='block'>
+      <section id='clarity' class='block light-band'>
         <div class='section-head fade-up'>
           <div><div class='section-label'>What Shariki is</div><h2>A practical bridge between early traction and growth readiness.</h2><div class='rule'></div></div>
           <p class='section-copy'>Shariki is not trying to be everything in the entrepreneurship ecosystem. It is a focused venture-building MVP for a small number of serious entrepreneurs who need the execution layer that helps real businesses become stronger.</p>
@@ -616,7 +684,7 @@
         </div>
       </section>
 
-      <section id='partners' class='block'>
+      <section id='partners' class='block light-band'>
         <div class='section-head fade-up'>
           <div><div class='section-label'>How partners can support Shariki</div><h2>Useful support is specific, practical, and close to the founder's real constraints.</h2><div class='rule'></div></div>
           <p class='section-copy'>Shariki is a platform for aligned people and institutions to help promising founders in targeted ways. The strongest partners bring proximity, expertise, relationships, and patient commitment to the first MVP.</p>
@@ -673,8 +741,19 @@
         </div>
       </section>
 
-      <footer class='footer fade-up'>
-        <div>Shariki helps promising Tanzanian entrepreneurs turn early traction into stronger, investable, access-expanding businesses. It is a practical venture-building MVP under Selfless Solutions, beginning in Arusha.</div>
+      <footer class='site-footer fade-up'>
+        <div class='footer-rule'></div>
+        <div class='footer-grid'>
+          <div>
+            <div class='footer-brand'>Shariki</div>
+            <p>Shariki is a venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to build stronger, access-expanding businesses.</p>
+          </div>
+          <div class='footer-contact'>
+            <a href='mailto:boniphace.maruchu@selflesssolutions.org'>boniphace.maruchu@selflesssolutions.org</a>
+            <a href='tel:+255685727999'>+255 685 727 999</a>
+          </div>
+        </div>
+        <div class='footer-meta'>Selfless Solutions · Tanzania</div>
       </footer>
     </div>
   </main>
