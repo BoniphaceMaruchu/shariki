@@ -3,33 +3,37 @@
 <head>
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Shariki | Venture-Building MVP</title>
-  <meta name='description' content='Shariki helps promising Tanzanian entrepreneurs turn early traction into stronger, investable, access-expanding businesses.'>
-  <meta property='og:title' content='Shariki | Venture-Building MVP'>
-  <meta property='og:description' content='A Selfless Solutions initiative supporting selected Tanzanian entrepreneurs with practical execution support.'>
+  <title>Shariki | A Selfless Solutions Venture-Building Initiative</title>
+  <meta name='description' content='Shariki is a hands-on venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to turn early traction into stronger, growth-ready, access-expanding businesses.'>
+  <meta name='theme-color' content='#071426'>
+  <meta property='og:title' content='Shariki | A Selfless Solutions Venture-Building Initiative'>
+  <meta property='og:description' content='A hands-on venture-building MVP helping promising Tanzanian entrepreneurs become stronger, growth-ready, access-expanding businesses.'>
   <meta property='og:type' content='website'>
+  <link rel='icon' href='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2218%22 fill=%22%23112E62%22/%3E%3Cpath d=%22M17 40c9-2 14-16 30-17%22 fill=%22none%22 stroke=%22%23FDB62F%22 stroke-width=%226%22 stroke-linecap=%22round%22/%3E%3Ctext x=%2232%22 y=%2242%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2228%22 font-weight=%22800%22 fill=%22%23FFFFFF%22%3ES%3C/text%3E%3C/svg%3E'>
   <style>
     :root {
       --bg: #071426;
-      --bg2: #0b1b34;
+      --bg-2: #0b1b34;
       --navy: #143163;
-      --navy2: #112e62;
+      --navy-2: #112e62;
       --surface: #10223f;
-      --surface2: #18345f;
+      --surface-2: #18345f;
       --gold: #f3ae31;
-      --gold2: #fdb62f;
+      --gold-2: #fdb62f;
       --gold-soft: #f8d58a;
       --light: #f5f7fb;
+      --light-2: #ffffff;
       --light-ink: #112e62;
       --light-muted: #4b5f7a;
       --text: #ffffff;
       --muted: #c7d2e3;
-      --muted2: #aebed4;
+      --muted-2: #aebed4;
       --border: rgba(255, 255, 255, 0.14);
       --gold-border: rgba(248, 213, 138, 0.38);
       --ink: #071426;
       --radius: 8px;
       --shadow: 0 18px 44px rgba(2, 8, 23, 0.24);
+      --soft-shadow: 0 14px 32px rgba(17, 46, 98, 0.09);
       --max: 1180px;
     }
 
@@ -41,9 +45,10 @@
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
       background:
-        linear-gradient(180deg, rgba(255,255,255,0.04), transparent 260px),
-        linear-gradient(135deg, #071426 0%, #10223f 48%, #071426 100%);
+        linear-gradient(180deg, rgba(255,255,255,0.05), transparent 300px),
+        linear-gradient(135deg, #071426 0%, #10223f 46%, #071426 100%);
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -51,12 +56,15 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background: linear-gradient(120deg, rgba(243,174,49,0.13), transparent 32%, rgba(255,255,255,0.035) 68%, transparent 100%);
-      opacity: 0.75;
+      background:
+        linear-gradient(120deg, rgba(243,174,49,0.14), transparent 30%),
+        linear-gradient(280deg, rgba(255,255,255,0.055), transparent 42%);
+      opacity: 0.72;
     }
 
     a { color: inherit; text-decoration: none; }
     p, h1, h2, h3, h4 { letter-spacing: 0; }
+    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--gold-soft); outline-offset: 3px; }
 
     .brand-line {
       height: 4px;
@@ -76,7 +84,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(7, 20, 38, 0.94);
+      background: rgba(7, 20, 38, 0.95);
       border-bottom: 1px solid rgba(248,213,138,0.18);
       backdrop-filter: blur(16px);
     }
@@ -93,31 +101,42 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      min-width: 228px;
+      min-width: 236px;
     }
 
     .brand-mark {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px 16px 21px 21px;
       display: grid;
       place-items: center;
-      background: #ffffff;
-      color: var(--navy2);
-      font-size: 20px;
-      font-weight: 900;
-      border: 3px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(145deg, #ffffff, #edf3fb);
+      color: var(--navy-2);
+      border: 2px solid var(--gold);
       box-shadow: 0 10px 24px rgba(0,0,0,0.18);
       flex: 0 0 auto;
     }
 
+    .brand-mark::before {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 17px;
+      border-bottom: 4px solid var(--gold);
+      border-radius: 50%;
+      transform: translateY(-2px) rotate(-17deg);
+    }
+
+    .brand-mark span { position: relative; z-index: 1; font-size: 21px; font-weight: 900; }
     .brand-name { font-size: 20px; font-weight: 850; line-height: 1; }
     .brand-meta { margin-top: 6px; color: var(--muted); font-size: 12px; line-height: 1.25; }
 
     .nav-links {
       display: flex;
       justify-content: flex-end;
-      gap: 4px;
+      gap: 3px;
       overflow-x: auto;
       scrollbar-width: none;
     }
@@ -129,22 +148,23 @@
       font-size: 14px;
       line-height: 1;
       padding: 11px 12px;
-      border-radius: var(--radius);
+      border-radius: 999px;
       white-space: nowrap;
-      transition: color 180ms ease, background 180ms ease;
+      transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
     }
 
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--text);
-      background: rgba(248,213,138,0.12);
+      background: rgba(248,213,138,0.11);
+      box-shadow: inset 0 0 0 1px rgba(248,213,138,0.18);
     }
 
     .hero {
-      padding: 58px 0 30px;
+      padding: 64px 0 30px;
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(330px, 0.62fr);
-      gap: 30px;
+      grid-template-columns: minmax(0, 1.03fr) minmax(330px, 0.64fr);
+      gap: 34px;
       align-items: center;
     }
 
@@ -161,6 +181,7 @@
       color: var(--gold-soft);
       font-size: 13px;
       line-height: 1.25;
+      font-weight: 760;
     }
 
     .badge::before {
@@ -174,30 +195,31 @@
 
     h1 {
       margin: 24px 0 0;
-      max-width: 960px;
-      font-size: 62px;
-      line-height: 1.04;
+      max-width: 900px;
+      font-size: 56px;
+      line-height: 1.07;
       font-weight: 860;
     }
 
     .hero-lead {
       margin: 24px 0 0;
-      max-width: 800px;
+      max-width: 780px;
       color: var(--muted);
-      font-size: 19px;
+      font-size: 18.5px;
       line-height: 1.72;
     }
 
     .parent-statement {
-      margin: 18px 0 0;
+      margin: 20px 0 0;
       max-width: 720px;
-      padding: 13px 16px;
+      padding: 14px 16px;
       border-left: 4px solid var(--gold);
-      background: rgba(255,255,255,0.07);
+      background: rgba(255,255,255,0.075);
       color: var(--gold-soft);
       font-size: 15px;
       line-height: 1.5;
-      font-weight: 750;
+      font-weight: 760;
+      box-shadow: inset 0 0 0 1px rgba(248,213,138,0.09);
     }
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -216,34 +238,35 @@
     }
 
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--gold2); color: var(--ink); box-shadow: 0 16px 32px rgba(243,174,49,0.2); }
-    .btn-secondary { background: rgba(255,255,255,0.06); color: var(--text); border-color: rgba(248,213,138,0.22); }
+    .btn-primary { background: var(--gold-2); color: var(--ink); box-shadow: 0 16px 32px rgba(243,174,49,0.2); }
+    .btn-secondary { background: rgba(255,255,255,0.06); color: var(--text); border-color: rgba(248,213,138,0.24); }
 
     .hero-note {
       margin-top: 18px;
       max-width: 720px;
-      color: var(--muted2);
+      color: var(--muted-2);
       font-size: 14px;
       line-height: 1.55;
     }
 
     .dashboard,
     .card,
-    .quick-item,
+    .cred-item,
     .step,
     .fact,
     .discovery-lead,
-    .mvp-summary {
+    .mvp-summary,
+    .quote-panel {
       border-radius: var(--radius);
       border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.045), rgba(255,255,255,0.018)), rgba(16,34,63,0.92);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)), rgba(16,34,63,0.92);
+      box-shadow: 0 14px 34px rgba(0,0,0,0.16);
     }
 
     .dashboard {
       overflow: hidden;
       box-shadow: var(--shadow);
-      border-color: rgba(248,213,138,0.22);
+      border-color: rgba(248,213,138,0.24);
       background: linear-gradient(180deg, rgba(20,49,99,0.98), rgba(16,34,63,0.94));
     }
 
@@ -252,7 +275,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding: 18px 18px 0;
+      padding: 20px 20px 0;
     }
 
     .dashboard-title { color: var(--gold-soft); font-size: 13px; font-weight: 800; }
@@ -272,21 +295,21 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
-      padding: 18px;
+      padding: 20px;
     }
 
     .metric {
       min-height: 112px;
-      padding: 14px;
+      padding: 15px;
       border: 1px solid rgba(248,213,138,0.18);
       border-radius: var(--radius);
-      background: rgba(7,20,38,0.58);
+      background: rgba(7,20,38,0.55);
     }
 
     .metric strong { display: block; color: var(--text); font-size: 29px; line-height: 1; margin-bottom: 10px; }
     .metric span { display: block; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
-    .focus-list { padding: 0 18px 18px; display: grid; gap: 10px; }
+    .focus-list { padding: 0 20px 20px; display: grid; gap: 10px; }
 
     .focus-item {
       display: grid;
@@ -305,7 +328,7 @@
       display: grid;
       place-items: center;
       border-radius: 6px;
-      background: var(--gold2);
+      background: var(--gold-2);
       color: var(--ink);
       font-size: 12px;
       font-weight: 900;
@@ -314,44 +337,56 @@
     .focus-item h3 { margin: 0 0 4px; font-size: 15px; line-height: 1.25; }
     .focus-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
 
-    .quick-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 8px 0 0; }
-    .quick-item { min-height: 122px; padding: 18px; border-top: 3px solid var(--gold); background: rgba(16,34,63,0.9); }
-    .quick-item strong { display: block; color: var(--text); font-size: 24px; line-height: 1.08; margin-bottom: 10px; }
-    .quick-item span { display: block; color: var(--muted); font-size: 14px; line-height: 1.52; }
+    .cred-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin: 14px 0 0;
+    }
 
-    section.block { padding-top: 82px; scroll-margin-top: 90px; }
+    .cred-item {
+      min-height: 104px;
+      padding: 18px;
+      border-top: 3px solid var(--gold);
+      background: rgba(16,34,63,0.84);
+    }
+
+    .cred-item strong { display: block; color: var(--text); font-size: 18px; line-height: 1.2; margin-bottom: 8px; }
+    .cred-item span { display: block; color: var(--muted); font-size: 14px; line-height: 1.52; }
+
+    section.block { padding-top: 92px; scroll-margin-top: 100px; }
 
     .section-head {
       display: grid;
       grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
       gap: 28px;
       align-items: end;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
-    .section-label { color: var(--gold-soft); font-size: 14px; font-weight: 800; margin-bottom: 10px; }
-    h2 { margin: 0; font-size: 44px; line-height: 1.08; font-weight: 820; }
-    .section-copy { margin: 0; color: var(--muted); font-size: 18px; line-height: 1.72; max-width: 740px; }
-    .rule { width: 86px; height: 3px; border-radius: 999px; background: var(--gold); margin-top: 18px; }
+    .section-label { color: var(--gold-soft); font-size: 13px; font-weight: 820; margin-bottom: 11px; text-transform: uppercase; }
+    h2 { margin: 0; font-size: 40px; line-height: 1.1; font-weight: 830; }
+    .section-copy { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.72; max-width: 740px; }
+    .rule { width: 78px; height: 3px; border-radius: 999px; background: var(--gold); margin-top: 18px; }
 
-    .grid-2, .grid-3, .grid-4, .split-list { display: grid; gap: 14px; }
+    .grid-2, .grid-3, .grid-4, .split-list { display: grid; gap: 16px; }
     .grid-2, .split-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
-    .card { min-height: 100%; padding: 22px; }
+    .card { min-height: 100%; padding: 24px; }
     .card.gold-edge { border-top: 3px solid var(--gold); }
     .card.dark { background: rgba(7,20,38,0.64); }
-    .card h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.18; font-weight: 800; }
-    .card p, .card li { color: var(--muted); font-size: 15.5px; line-height: 1.64; }
+    .card h3 { margin: 0 0 10px; font-size: 21px; line-height: 1.22; font-weight: 800; }
+    .card p, .card li { color: var(--muted); font-size: 15.5px; line-height: 1.66; }
     .card p { margin: 0; }
     .card ul { margin: 0; padding-left: 18px; }
     .card li + li { margin-top: 8px; }
 
     .light-band {
-      margin: 82px -22px 0;
-      padding: 54px 22px;
-      background: var(--light);
+      margin: 92px -22px 0;
+      padding: 62px 22px;
+      background: linear-gradient(180deg, #ffffff, var(--light));
       color: var(--light-ink);
       border-top: 3px solid var(--gold);
       border-bottom: 1px solid rgba(20,49,99,0.12);
@@ -364,12 +399,12 @@
     .light-band .card {
       background: #ffffff;
       border-color: rgba(20,49,99,0.12);
-      box-shadow: 0 12px 26px rgba(17,46,98,0.08);
+      box-shadow: var(--soft-shadow);
     }
-    .light-band .card.dark { background: #eaf0f8; }
+    .light-band .card.dark { background: #eef3fa; }
     .light-band .check-list li { background: #ffffff; border-color: rgba(20,49,99,0.12); color: var(--light-muted); }
-    .light-band .not-list li { background: #f0f4fa; }
-    .light-band .mini-label { background: rgba(243,174,49,0.18); color: #80550f; border-color: rgba(243,174,49,0.28); }
+    .light-band .not-list li { background: #f1f5fb; }
+    .light-band .mini-label { background: rgba(243,174,49,0.16); color: #80550f; border-color: rgba(243,174,49,0.28); }
 
     .mini-label {
       display: inline-flex;
@@ -411,46 +446,61 @@
     .not-list li::before { background: transparent; border: 2px solid rgba(20,49,99,0.34); }
 
     .discovery-lead {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
       padding: 26px;
       border-color: var(--gold-border);
       background: linear-gradient(90deg, rgba(243,174,49,0.13), rgba(243,174,49,0.04)), rgba(16,34,63,0.94);
     }
 
-    .discovery-lead p { margin: 0; max-width: 980px; color: var(--text); font-size: 25px; line-height: 1.36; font-weight: 780; }
+    .discovery-lead p { margin: 0; max-width: 980px; color: var(--text); font-size: 24px; line-height: 1.38; font-weight: 780; }
 
-    .mvp-panel { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 14px; align-items: stretch; }
-    .mvp-summary { padding: 28px; border-color: var(--gold-border); background: linear-gradient(180deg, rgba(243,174,49,0.12), rgba(243,174,49,0.035)), rgba(16,34,63,0.94); }
-    .mvp-summary h3 { margin: 0 0 14px; font-size: 30px; line-height: 1.15; }
+    .quote-panel {
+      margin-bottom: 16px;
+      padding: 24px 26px;
+      display: grid;
+      grid-template-columns: 4px 1fr;
+      gap: 18px;
+      align-items: start;
+      border-color: rgba(248,213,138,0.26);
+      background: rgba(255,255,255,0.055);
+    }
+
+    .quote-panel::before { content: ''; width: 4px; height: 100%; min-height: 62px; background: var(--gold); border-radius: 999px; }
+    .quote-panel p { margin: 0; color: var(--text); font-size: 22px; line-height: 1.48; font-weight: 760; }
+    .quote-panel span { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+    .mvp-panel { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 16px; align-items: stretch; }
+    .mvp-summary { padding: 30px; border-color: var(--gold-border); background: linear-gradient(180deg, rgba(243,174,49,0.12), rgba(243,174,49,0.035)), rgba(16,34,63,0.94); }
+    .mvp-summary h3 { margin: 0 0 14px; font-size: 29px; line-height: 1.16; }
     .mvp-summary p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
 
-    .facts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .facts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .fact { min-height: 118px; padding: 18px; background: rgba(7,20,38,0.56); }
-    .fact span { display: block; color: var(--muted2); font-size: 13px; margin-bottom: 10px; }
-    .fact strong { display: block; color: var(--text); font-size: 23px; line-height: 1.18; }
+    .fact span { display: block; color: var(--muted-2); font-size: 13px; margin-bottom: 10px; }
+    .fact strong { display: block; color: var(--text); font-size: 22px; line-height: 1.2; }
 
-    .steps { display: grid; gap: 12px; }
-    .step { display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 18px; }
-    .step-no { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--radius); background: var(--gold2); color: var(--ink); font-weight: 900; }
+    .steps { display: grid; gap: 14px; }
+    .step { display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 20px; }
+    .step-no { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--radius); background: var(--gold-2); color: var(--ink); font-weight: 900; }
     .step h3 { margin: 0 0 6px; font-size: 22px; line-height: 1.16; }
     .step p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
 
     .pill-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
     .pill { display: inline-flex; align-items: center; min-height: 34px; padding: 8px 10px; border: 1px solid rgba(248,213,138,0.16); border-radius: 999px; background: rgba(255,255,255,0.045); color: var(--muted); font-size: 13px; line-height: 1.2; }
 
-    .founder-grid { display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); gap: 14px; }
-    .founder-name { font-size: 32px; line-height: 1.1; margin: 0 0 12px; font-weight: 840; }
+    .founder-grid { display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); gap: 16px; }
+    .founder-name { font-size: 31px; line-height: 1.12; margin: 0 0 12px; font-weight: 840; }
 
-    .contact-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr); gap: 14px; align-items: stretch; }
+    .contact-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr); gap: 16px; align-items: stretch; }
     .contact-lines { display: grid; gap: 10px; }
     .contact-line { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px; border: 1px solid rgba(248,213,138,0.16); border-radius: var(--radius); background: rgba(255,255,255,0.04); color: var(--muted); overflow-wrap: anywhere; }
-    .contact-key { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 6px; background: var(--gold2); color: var(--ink); font-weight: 900; font-size: 12px; flex: 0 0 auto; }
+    .contact-key { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 6px; background: var(--gold-2); color: var(--ink); font-weight: 900; font-size: 12px; flex: 0 0 auto; }
 
     .site-footer {
-      margin: 82px 0 40px;
-      padding: 34px;
+      margin: 92px 0 42px;
+      padding: 36px;
       border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--navy), var(--navy2));
+      background: linear-gradient(180deg, var(--navy), var(--navy-2));
       border: 1px solid rgba(248,213,138,0.24);
       color: var(--text);
       box-shadow: var(--shadow);
@@ -458,7 +508,8 @@
 
     .footer-rule { width: 92px; height: 3px; background: var(--gold); border-radius: 999px; margin-bottom: 22px; }
     .footer-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr); gap: 28px; align-items: start; }
-    .footer-brand { font-size: 24px; line-height: 1; font-weight: 850; margin-bottom: 12px; }
+    .footer-brand { font-size: 24px; line-height: 1; font-weight: 850; margin-bottom: 8px; }
+    .footer-kicker { color: var(--gold-soft); font-size: 13px; font-weight: 760; margin-bottom: 12px; }
     .site-footer p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 760px; }
     .footer-contact { display: grid; gap: 10px; color: var(--gold-soft); font-size: 14px; line-height: 1.5; }
     .footer-meta { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(248,213,138,0.2); color: var(--muted); font-size: 13px; }
@@ -473,10 +524,10 @@
     }
 
     @media (max-width: 1080px) {
-      h1 { font-size: 50px; }
-      h2 { font-size: 38px; }
+      h1 { font-size: 48px; }
+      h2 { font-size: 36px; }
       .hero, .section-head, .mvp-panel, .founder-grid, .contact-band, .footer-grid { grid-template-columns: 1fr; }
-      .quick-strip, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .cred-strip, .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 780px) {
@@ -485,18 +536,20 @@
       .brand { min-width: 0; }
       .nav-links { width: 100%; justify-content: flex-start; padding-bottom: 2px; }
       .nav-links a { padding: 10px 9px; }
-      .hero { padding-top: 34px; }
-      h1 { font-size: 36px; line-height: 1.08; }
-      h2 { font-size: 30px; }
+      .hero { padding-top: 42px; }
+      h1 { font-size: 35px; line-height: 1.1; }
+      h2 { font-size: 29px; }
       .hero-lead, .section-copy { font-size: 16px; }
-      .metric-grid, .quick-strip, .grid-2, .grid-3, .grid-4, .split-list, .facts-grid { grid-template-columns: 1fr; }
+      .metric-grid, .cred-strip, .grid-2, .grid-3, .grid-4, .split-list, .facts-grid { grid-template-columns: 1fr; }
       .dashboard-head { align-items: flex-start; flex-direction: column; gap: 10px; }
-      .discovery-lead, .mvp-summary, .site-footer { padding: 22px; }
-      .light-band { margin-left: -16px; margin-right: -16px; padding: 44px 16px; }
-      .discovery-lead p { font-size: 21px; }
-      .mvp-summary h3, .founder-name { font-size: 26px; }
+      .discovery-lead, .mvp-summary, .site-footer, .quote-panel { padding: 22px; }
+      .quote-panel { grid-template-columns: 1fr; }
+      .quote-panel::before { width: 76px; height: 3px; min-height: 3px; }
+      .light-band { margin-left: -16px; margin-right: -16px; padding: 48px 16px; }
+      .discovery-lead p, .quote-panel p { font-size: 20px; }
+      .mvp-summary h3, .founder-name { font-size: 25px; }
       .step { grid-template-columns: 1fr; }
-      section.block { padding-top: 66px; }
+      section.block { padding-top: 70px; }
     }
   </style>
 </head>
@@ -505,7 +558,7 @@
   <div class='nav-wrap'>
     <div class='container nav'>
       <a class='brand' href='#top' aria-label='Shariki home'>
-        <div class='brand-mark'>S</div>
+        <div class='brand-mark' aria-hidden='true'><span>S</span></div>
         <div>
           <div class='brand-name'>Shariki</div>
           <div class='brand-meta'>A Selfless Solutions initiative</div>
@@ -529,14 +582,14 @@
       <section class='hero' aria-labelledby='hero-title'>
         <div class='hero-copy fade-up'>
           <div class='badge'>A Selfless Solutions venture-building initiative</div>
-          <h1 id='hero-title'>Helping promising Tanzanian entrepreneurs turn early traction into stronger, investable, access-expanding businesses.</h1>
+          <h1 id='hero-title'>Helping promising Tanzanian entrepreneurs turn early traction into stronger, growth-ready, access-expanding businesses.</h1>
           <p class='hero-lead'>Shariki is a hands-on venture-building MVP under Selfless Solutions. We support selected entrepreneurs with execution discipline, financial systems, customer learning, partnerships, and accountability so their businesses can grow beyond survival.</p>
           <p class='parent-statement'>Built under Selfless Solutions to expand education and economic opportunity in Tanzania.</p>
           <div class='hero-actions'>
             <a class='btn btn-primary' href='#model'>Explore the model</a>
             <a class='btn btn-secondary' href='#contact'>Start a conversation</a>
           </div>
-          <p class='hero-note'>Starting small in Arusha, Shariki is built for philanthropists, mentors, ecosystem builders, potential partners, and aligned supporters who want to help serious founders become more durable.</p>
+          <p class='hero-note'>Starting small in Arusha, Shariki is built for philanthropists, mentors, ecosystem builders, potential partners, and aligned supporters who want to help serious local founders become more durable.</p>
         </div>
 
         <aside class='dashboard fade-up' aria-label='Shariki MVP snapshot'>
@@ -558,11 +611,11 @@
         </aside>
       </section>
 
-      <section class='quick-strip fade-up' aria-label='Shariki quick facts'>
-        <div class='quick-item'><strong>Small by design</strong><span>The first cohort is intentionally narrow so the model can learn deeply before expanding.</span></div>
-        <div class='quick-item'><strong>Traction first</strong><span>Shariki looks for entrepreneurs already serving real customers, not only ideas.</span></div>
-        <div class='quick-item'><strong>Hands-on</strong><span>The work centers on operating discipline, systems, accountability, and practical growth constraints.</span></div>
-        <div class='quick-item'><strong>Access lens</strong><span>Priority goes to ventures that can reach underserved communities through stronger business models.</span></div>
+      <section class='cred-strip fade-up' aria-label='Shariki credibility summary'>
+        <div class='cred-item'><strong>Under Selfless Solutions</strong><span>A distinct program connected to a trusted Tanzania-focused nonprofit.</span></div>
+        <div class='cred-item'><strong>Arusha MVP</strong><span>Starting locally, close to founders, customers, and practical relationships.</span></div>
+        <div class='cred-item'><strong>3-5 founders</strong><span>A deliberately small cohort for depth, discipline, and real learning.</span></div>
+        <div class='cred-item'><strong>90-day support sprint</strong><span>Focused hands-on support around execution, finance, market access, and partnerships.</span></div>
       </section>
 
       <section id='clarity' class='block light-band'>
@@ -595,9 +648,12 @@
       <section id='discovery' class='block'>
         <div class='section-head fade-up'>
           <div><div class='section-label'>What discovery revealed</div><h2>The missing middle is execution.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Entrepreneur discovery showed that the main gap is not lack of ideas. Many founders are already active, capable, and serving customers. The harder gap is turning early traction into disciplined, durable growth.</p>
+          <p class='section-copy'>Entrepreneur discovery showed that the main gap is not lack of ideas. Many local founders are already active, capable, and serving real customers. The harder gap is turning early traction into disciplined, durable growth.</p>
         </div>
         <div class='discovery-lead fade-up'><p>The biggest gap is not lack of ideas. It is the execution layer between early traction and durable growth.</p></div>
+        <div class='quote-panel fade-up'>
+          <div><p>The gap is not ambition. The gap is the operating support around serious founders.</p><span>Shariki is designed to provide practical proximity, accountability, and trusted connections for entrepreneurs serving underserved communities.</span></div>
+        </div>
         <div class='grid-3'>
           <article class='card gold-edge fade-up'><h3>Execution capacity</h3><p>Founders are active and committed, but many lack repeatable systems, clear priorities, and disciplined follow-through.</p></article>
           <article class='card gold-edge fade-up'><h3>Financial readiness</h3><p>Many businesses need stronger tracking, costing, reporting, and decision-making before they can responsibly pursue future growth.</p></article>
@@ -668,7 +724,7 @@
           <article class='card gold-edge fade-up'>
             <div class='mini-label'>Founder and venture outcomes</div>
             <h3>Stronger businesses with better growth readiness.</h3>
-            <p>Shariki looks for practical improvements that make a founder more credible, more disciplined, and more ready for the right next step.</p>
+            <p>Shariki looks for practical improvements that make a founder more credible, investable, disciplined, and ready for the right next step.</p>
             <div class='pill-row'>
               <span class='pill'>Revenue growth</span><span class='pill'>Stronger financial systems</span><span class='pill'>Improved execution</span><span class='pill'>Better customer understanding</span><span class='pill'>Follow-on partnerships</span><span class='pill'>Investment readiness</span><span class='pill'>Healthier survival prospects</span>
             </div>
@@ -746,7 +802,8 @@
         <div class='footer-grid'>
           <div>
             <div class='footer-brand'>Shariki</div>
-            <p>Shariki is a venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to build stronger, access-expanding businesses.</p>
+            <div class='footer-kicker'>A venture-building MVP under Selfless Solutions</div>
+            <p>Supporting promising Tanzanian entrepreneurs to build stronger, access-expanding businesses.</p>
           </div>
           <div class='footer-contact'>
             <a href='mailto:boniphace.maruchu@selflesssolutions.org'>boniphace.maruchu@selflesssolutions.org</a>
