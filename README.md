@@ -1,57 +1,37 @@
-# Shariki | Interactive Outreach Pitch Page
+# Shariki interactive pitch
 
-Shariki is a Tanzania-based venture-building program currently incubated by Selfless Solutions.
+A public, responsive pitch page for Shariki, a venture-building initiative of Selfless Solutions in Tanzania. It is designed for funders, partners and entrepreneurship supporters.
 
-This repository hosts the public interactive outreach pitch page for Shariki — designed to be shared directly in outreach emails with funders, ecosystem builders, social entrepreneurs, and aligned partners.
+## Current state
 
-## What Shariki Is
+Shariki is developing its first venture-building pilot in Arusha. The page describes its intended model and labels later plans as future directions. It does not present proposed impact as achieved results or assign a funding amount before the budget is final.
 
-Shariki exists to identify and support early-stage entrepreneurs building market-creating businesses that make essential products and services more affordable, accessible, and practical for underserved communities in Tanzania.
+## Files
 
-The model begins with a focused pilot in Arusha and is being built toward a repeatable platform that can support promising founders across Tanzania and, over time, East Africa.
+- `index.html` — all page copy and structure
+- `styles.css` — design and responsive layouts
+- `app.js` — tabs, expanders, mobile navigation and reading progress
+- `assets/selfless-logo.png` — supplied Selfless Solutions logo
+- `assets/shariki-programme-profile.pdf` — supplied two-page programme profile
 
-## Why This Page Exists
+No build step or external services are required. Open `index.html` locally to preview.
 
-Instead of sending a heavy presentation upfront, this page offers a clean, fast, and more human way to understand:
+## Edit the page on GitHub
 
-- the problem Shariki is addressing
-- why promising entrepreneurs often remain stuck
-- what makes Shariki different
-- how the model works
-- what the early pilot looks like
-- why this matters now
+1. Open `index.html` in the repository and click the pencil icon (**Edit this file**).
+2. Find the sentence you want to change, edit it and choose **Commit changes**.
+3. Refresh the public Pages link after GitHub finishes publishing. Changes to layout go in `styles.css`; interaction text for the four market-creation tabs goes in `app.js`.
 
-This page is intentionally relationship-first. It is designed to open conversations, build trust, and create alignment.
+Keep current pilot activity separate from plans for direct investment, financial participation and expansion. Update the funding language when a grant amount and period have been approved.
 
-## Current Positioning
+## Publish with GitHub Pages
 
-Shariki is currently incubated by **Selfless Solutions** and led by **Boniphace Maruchu**.
+In the repository, go to **Settings → Pages**. Under **Build and deployment**, choose **Deploy from a branch**, then `main` and `/(root)`, and click **Save**. The public URL for this repository is:
 
-## Contact
+https://boniphacemaruchu.github.io/shariki/
 
-**Boniphace Maruchu**  
-Program Lead, Shariki  
-A program under Selfless Solutions  
+## Source grounding
 
-Email: boniphace.maruchu@selflesssolutions.org  
-Phone: +255 685 727 999
+The narrative is adapted from the September 2026 `Shariki_Funder_Vision_Deck_Working_Draft_v2` and the supplied `Shariki Venture-Building Profile`. The market-creation framework cites Clayton M. Christensen, Efosa Ojomo and Karen Dillon's *The Prosperity Paradox*. It is a conceptual framework; site illustrations are not quantitative findings.
 
-## Repository Notes
-
-This repository is intended for GitHub Pages hosting.
-
-If you are viewing the source files:
-- `index.html` contains the full interactive pitch page
-- any future assets such as logo files or images can be added to the repository root or an `/assets` folder
-
-## Suggested Repository Description
-
-Interactive outreach pitch page for Shariki — a Tanzania-based venture-building program supporting entrepreneurs building market-creating businesses for underserved communities.
-
-## Suggested Website Link Label
-
-Shariki | Interactive Overview
-
----
-
-Built for outreach, alignment, and conversation.
+Contact: boniphace.maruchu@selflesssolutions.org

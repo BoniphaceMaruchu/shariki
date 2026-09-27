@@ -1,871 +1,178 @@
-<!DOCTYPE html>
-<html lang='en'>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <title>Shariki | A Selfless Solutions Venture-Building Initiative</title>
-  <meta name='description' content='Shariki is a hands-on venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to turn early traction into stronger, growth-ready, access-expanding businesses.'>
-  <meta name='theme-color' content='#071426'>
-  <meta property='og:title' content='Shariki | A Selfless Solutions Venture-Building Initiative'>
-  <meta property='og:description' content='Shariki is a hands-on venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to turn early traction into stronger, growth-ready, access-expanding businesses.'>
-  <meta property='og:type' content='website'>
-  <meta property='og:url' content='https://boniphacemaruchu.github.io/shariki/'>
-  <meta name='twitter:card' content='summary'>
-  <meta name='twitter:title' content='Shariki | A Selfless Solutions Venture-Building Initiative'>
-  <meta name='twitter:description' content='Shariki is a hands-on venture-building MVP under Selfless Solutions, supporting promising Tanzanian entrepreneurs to turn early traction into stronger, growth-ready, access-expanding businesses.'>
-  <link rel='icon' href='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Crect width=%2264%22 height=%2264%22 rx=%2218%22 fill=%22%23112E62%22/%3E%3Cpath d=%22M17 40c9-2 14-16 30-17%22 fill=%22none%22 stroke=%22%23FDB62F%22 stroke-width=%226%22 stroke-linecap=%22round%22/%3E%3Ctext x=%2232%22 y=%2242%22 text-anchor=%22middle%22 font-family=%22Arial%22 font-size=%2228%22 font-weight=%22800%22 fill=%22%23FFFFFF%22%3ES%3C/text%3E%3C/svg%3E'>
-  <style>
-    :root {
-      --bg: #071426;
-      --bg-2: #0b1b34;
-      --navy: #143163;
-      --navy-2: #112e62;
-      --surface: #10223f;
-      --surface-2: #18345f;
-      --gold: #f3ae31;
-      --gold-2: #fdb62f;
-      --gold-soft: #f8d58a;
-      --light: #f5f7fb;
-      --light-2: #ffffff;
-      --light-ink: #112e62;
-      --light-muted: #4b5f7a;
-      --text: #ffffff;
-      --muted: #c7d2e3;
-      --muted-2: #aebed4;
-      --border: rgba(255, 255, 255, 0.14);
-      --gold-border: rgba(248, 213, 138, 0.38);
-      --ink: #071426;
-      --radius: 8px;
-      --shadow: 0 18px 44px rgba(2, 8, 23, 0.24);
-      --soft-shadow: 0 14px 32px rgba(17, 46, 98, 0.09);
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.05), transparent 300px),
-        linear-gradient(135deg, #071426 0%, #10223f 46%, #071426 100%);
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(120deg, rgba(243,174,49,0.14), transparent 30%),
-        linear-gradient(280deg, rgba(255,255,255,0.055), transparent 42%);
-      opacity: 0.72;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    p, h1, h2, h3, h4 { letter-spacing: 0; }
-    a:focus-visible, .btn:focus-visible { outline: 3px solid var(--gold-soft); outline-offset: 3px; }
-
-    .brand-line {
-      height: 4px;
-      background: linear-gradient(90deg, var(--gold), var(--gold-soft), var(--gold));
-      position: relative;
-      z-index: 30;
-    }
-
-    .container {
-      width: min(100%, var(--max));
-      margin: 0 auto;
-      padding: 0 22px;
-      position: relative;
-    }
-
-    .nav-wrap {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(7, 20, 38, 0.95);
-      border-bottom: 1px solid rgba(248,213,138,0.18);
-      backdrop-filter: blur(16px);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      min-width: 236px;
-    }
-
-    .brand-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px 16px 21px 21px;
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(145deg, #ffffff, #edf3fb);
-      color: var(--navy-2);
-      border: 2px solid var(--gold);
-      box-shadow: 0 10px 24px rgba(0,0,0,0.18);
-      flex: 0 0 auto;
-    }
-
-    .brand-mark::before {
-      content: '';
-      position: absolute;
-      width: 32px;
-      height: 17px;
-      border-bottom: 4px solid var(--gold);
-      border-radius: 50%;
-      transform: translateY(-2px) rotate(-17deg);
-    }
-
-    .brand-mark span { position: relative; z-index: 1; font-size: 21px; font-weight: 900; }
-    .brand-name { font-size: 20px; font-weight: 850; line-height: 1; }
-    .brand-meta { margin-top: 6px; color: var(--muted); font-size: 12px; line-height: 1.25; }
-
-    .nav-links {
-      display: flex;
-      justify-content: flex-end;
-      gap: 3px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-
-    .nav-links::-webkit-scrollbar { display: none; }
-
-    .nav-links a {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1;
-      padding: 11px 12px;
-      border-radius: 999px;
-      white-space: nowrap;
-      transition: color 180ms ease, background 180ms ease, box-shadow 180ms ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--text);
-      background: rgba(248,213,138,0.11);
-      box-shadow: inset 0 0 0 1px rgba(248,213,138,0.18);
-    }
-
-    .hero {
-      padding: 64px 0 30px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.03fr) minmax(330px, 0.64fr);
-      gap: 34px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      width: fit-content;
-      min-height: 34px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(248,213,138,0.44);
-      background: rgba(243,174,49,0.12);
-      color: var(--gold-soft);
-      font-size: 13px;
-      line-height: 1.25;
-      font-weight: 760;
-    }
-
-    .badge::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex: 0 0 auto;
-    }
-
-    h1 {
-      margin: 24px 0 0;
-      max-width: 900px;
-      font-size: 56px;
-      line-height: 1.07;
-      font-weight: 860;
-    }
-
-    .headline-line { display: block; }
-
-    .hero-lead {
-      margin: 28px 0 0;
-      max-width: 780px;
-      color: var(--muted);
-      font-size: 18.5px;
-      line-height: 1.72;
-    }
-
-    .parent-statement {
-      margin: 24px 0 0;
-      max-width: 720px;
-      padding: 15px 18px;
-      border-left: 4px solid var(--gold);
-      background: rgba(255,255,255,0.075);
-      color: var(--gold-soft);
-      font-size: 15px;
-      line-height: 1.5;
-      font-weight: 760;
-      box-shadow: inset 0 0 0 1px rgba(248,213,138,0.09);
-    }
-
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      border-radius: var(--radius);
-      padding: 13px 17px;
-      border: 1px solid transparent;
-      font-weight: 800;
-      font-size: 14px;
-      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
-    }
-
-    .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: var(--gold-2); color: var(--ink); box-shadow: 0 16px 32px rgba(243,174,49,0.2); }
-    .btn-secondary { background: rgba(255,255,255,0.06); color: var(--text); border-color: rgba(248,213,138,0.24); }
-
-    .hero-note {
-      margin-top: 20px;
-      max-width: 720px;
-      color: var(--muted-2);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .dashboard,
-    .card,
-    .step,
-    .fact,
-    .discovery-lead,
-    .mvp-summary,
-    .quote-panel {
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02)), rgba(16,34,63,0.92);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.16);
-    }
-
-    .dashboard {
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border-color: rgba(248,213,138,0.24);
-      background: linear-gradient(180deg, rgba(20,49,99,0.98), rgba(16,34,63,0.94));
-    }
-
-    .dashboard-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 20px 20px 0;
-    }
-
-    .dashboard-title { color: var(--gold-soft); font-size: 13px; font-weight: 800; }
-
-    .status-chip {
-      min-height: 28px;
-      padding: 6px 9px;
-      border-radius: 999px;
-      background: rgba(248,213,138,0.16);
-      color: var(--gold-soft);
-      border: 1px solid rgba(248,213,138,0.32);
-      font-size: 12px;
-      white-space: nowrap;
-    }
-
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      padding: 20px;
-    }
-
-    .metric {
-      min-height: 112px;
-      padding: 15px;
-      border: 1px solid rgba(248,213,138,0.18);
-      border-radius: var(--radius);
-      background: rgba(7,20,38,0.55);
-    }
-
-    .metric strong { display: block; color: var(--text); font-size: 29px; line-height: 1; margin-bottom: 10px; }
-    .metric span { display: block; color: var(--muted); font-size: 13px; line-height: 1.45; }
-
-    .focus-list { padding: 0 20px 20px; display: grid; gap: 10px; }
-
-    .focus-item {
-      display: grid;
-      grid-template-columns: 30px 1fr;
-      gap: 10px;
-      align-items: start;
-      padding: 12px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(248,213,138,0.16);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .focus-no {
-      width: 30px;
-      height: 30px;
-      display: grid;
-      place-items: center;
-      border-radius: 6px;
-      background: var(--gold-2);
-      color: var(--ink);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .focus-item h3 { margin: 0 0 4px; font-size: 15px; line-height: 1.25; }
-    .focus-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
-
-    .cred-strip {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 0;
-      margin: 18px 0 0;
-      padding: 15px 18px;
-      border-radius: var(--radius);
-      border: 1px solid rgba(248,213,138,0.2);
-      background: rgba(16,34,63,0.78);
-      box-shadow: 0 14px 34px rgba(0,0,0,0.14);
-    }
-
-    .cred-item {
-      position: relative;
-      padding: 7px 17px;
-      color: var(--text);
-      font-size: 14px;
-      line-height: 1.2;
-      font-weight: 780;
-      white-space: nowrap;
-    }
-
-    .cred-item + .cred-item::before {
-      content: '·';
-      position: absolute;
-      left: -3px;
-      color: var(--gold-soft);
-      font-weight: 900;
-    }
-
-    .cred-item span { color: var(--muted); }
-
-    section.block { padding-top: 92px; scroll-margin-top: 100px; }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-      gap: 28px;
-      align-items: end;
-      margin-bottom: 24px;
-    }
-
-    .section-label { color: var(--gold-soft); font-size: 13px; font-weight: 820; margin-bottom: 11px; text-transform: uppercase; }
-    h2 { margin: 0; font-size: 40px; line-height: 1.1; font-weight: 830; }
-    .section-copy { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.72; max-width: 740px; }
-    .rule { width: 78px; height: 3px; border-radius: 999px; background: var(--gold); margin-top: 18px; }
-
-    .grid-2, .grid-3, .grid-4, .split-list { display: grid; gap: 16px; }
-    .grid-2, .split-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-
-    .card { min-height: 100%; padding: 24px; }
-    .card.gold-edge { border-top: 3px solid var(--gold); }
-    .card.dark { background: rgba(7,20,38,0.64); }
-    .card h3 { margin: 0 0 10px; font-size: 21px; line-height: 1.22; font-weight: 800; }
-    .card p, .card li { color: var(--muted); font-size: 15.5px; line-height: 1.66; }
-    .card p { margin: 0; }
-    .card ul { margin: 0; padding-left: 18px; }
-    .card li + li { margin-top: 8px; }
-
-    .light-band {
-      margin: 96px -22px 0;
-      padding: 68px 22px;
-      background: linear-gradient(180deg, #ffffff, var(--light));
-      color: var(--light-ink);
-      border-top: 3px solid var(--gold);
-      border-bottom: 1px solid rgba(20,49,99,0.12);
-    }
-
-    .light-band .section-label { color: #946412; }
-    .light-band h2, .light-band .card h3 { color: var(--light-ink); }
-    .light-band .section-copy, .light-band .card p, .light-band .card li { color: var(--light-muted); }
-    .light-band .rule { background: var(--gold); }
-    .light-band .card {
-      background: rgba(255,255,255,0.88);
-      border-color: rgba(20,49,99,0.12);
-      box-shadow: var(--soft-shadow);
-    }
-    .light-band .card.dark { background: #eef3fa; }
-    .light-band .check-list li { background: #ffffff; border-color: rgba(20,49,99,0.12); color: var(--light-muted); }
-    .light-band .not-list li { background: #f1f5fb; }
-    .light-band .mini-label { background: rgba(243,174,49,0.16); color: #80550f; border-color: rgba(243,174,49,0.28); }
-
-    .mini-label {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      margin-bottom: 14px;
-      padding: 6px 9px;
-      border-radius: 999px;
-      background: rgba(243,174,49,0.13);
-      color: var(--gold-soft);
-      border: 1px solid rgba(248,213,138,0.26);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .check-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
-    .check-list li {
-      position: relative;
-      min-height: 40px;
-      padding: 11px 12px 11px 38px;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .check-list li::before {
-      content: '';
-      position: absolute;
-      left: 13px;
-      top: 16px;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--gold);
-    }
-
-    .not-list li::before { background: transparent; border: 2px solid rgba(20,49,99,0.34); }
-
-    .discovery-lead {
-      margin-bottom: 16px;
-      padding: 26px;
-      border-color: var(--gold-border);
-      background: linear-gradient(90deg, rgba(243,174,49,0.13), rgba(243,174,49,0.04)), rgba(16,34,63,0.94);
-    }
-
-    .discovery-lead p { margin: 0; max-width: 980px; color: var(--text); font-size: 24px; line-height: 1.38; font-weight: 780; }
-
-    .quote-panel {
-      margin-bottom: 16px;
-      padding: 24px 26px;
-      display: grid;
-      grid-template-columns: 4px 1fr;
-      gap: 18px;
-      align-items: start;
-      border-color: rgba(248,213,138,0.26);
-      background: rgba(255,255,255,0.055);
-    }
-
-    .quote-panel::before { content: ''; width: 4px; height: 100%; min-height: 62px; background: var(--gold); border-radius: 999px; }
-    .quote-panel p { margin: 0; color: var(--text); font-size: 22px; line-height: 1.48; font-weight: 760; }
-    .quote-panel span { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.55; }
-
-    .mvp-panel { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 16px; align-items: stretch; }
-    .mvp-summary { padding: 30px; border-color: var(--gold-border); background: linear-gradient(180deg, rgba(243,174,49,0.12), rgba(243,174,49,0.035)), rgba(16,34,63,0.94); }
-    .mvp-summary h3 { margin: 0 0 14px; font-size: 29px; line-height: 1.16; }
-    .mvp-summary p { margin: 0; color: var(--muted); font-size: 17px; line-height: 1.7; }
-
-    .facts-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-    .fact { min-height: 118px; padding: 18px; background: rgba(7,20,38,0.56); }
-    .fact span { display: block; color: var(--muted-2); font-size: 13px; margin-bottom: 10px; }
-    .fact strong { display: block; color: var(--text); font-size: 22px; line-height: 1.2; }
-
-    .steps { display: grid; gap: 14px; }
-    .step { display: grid; grid-template-columns: 52px 1fr; gap: 14px; padding: 20px; }
-    .step-no { width: 52px; height: 52px; display: grid; place-items: center; border-radius: var(--radius); background: var(--gold-2); color: var(--ink); font-weight: 900; }
-    .step h3 { margin: 0 0 6px; font-size: 22px; line-height: 1.16; }
-    .step p { margin: 0; color: var(--muted); font-size: 15.5px; line-height: 1.6; }
-
-    .pill-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 16px; }
-    .pill { display: inline-flex; align-items: center; min-height: 34px; padding: 8px 10px; border: 1px solid rgba(248,213,138,0.16); border-radius: 999px; background: rgba(255,255,255,0.045); color: var(--muted); font-size: 13px; line-height: 1.2; }
-
-    .founder-grid { display: grid; grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr); gap: 16px; }
-    .founder-name { font-size: 31px; line-height: 1.12; margin: 0 0 12px; font-weight: 840; }
-
-    .contact-band { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr); gap: 16px; align-items: stretch; }
-    .contact-lines { display: grid; gap: 10px; }
-    .contact-line { display: flex; align-items: center; gap: 10px; min-height: 48px; padding: 12px; border: 1px solid rgba(248,213,138,0.16); border-radius: var(--radius); background: rgba(255,255,255,0.04); color: var(--muted); overflow-wrap: anywhere; }
-    .contact-key { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 6px; background: var(--gold-2); color: var(--ink); font-weight: 900; font-size: 12px; flex: 0 0 auto; }
-
-    .site-footer {
-      margin: 92px 0 42px;
-      padding: 36px;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, var(--navy), var(--navy-2));
-      border: 1px solid rgba(248,213,138,0.24);
-      color: var(--text);
-      box-shadow: var(--shadow);
-    }
-
-    .footer-rule { width: 92px; height: 3px; background: var(--gold); border-radius: 999px; margin-bottom: 22px; }
-    .footer-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.42fr); gap: 28px; align-items: start; }
-    .footer-brand { font-size: 24px; line-height: 1; font-weight: 850; margin-bottom: 8px; }
-    .footer-kicker { color: var(--gold-soft); font-size: 13px; font-weight: 760; margin-bottom: 12px; }
-    .site-footer p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 760px; }
-    .footer-contact { display: grid; gap: 10px; color: var(--gold-soft); font-size: 14px; line-height: 1.5; }
-    .footer-meta { margin-top: 24px; padding-top: 18px; border-top: 1px solid rgba(248,213,138,0.2); color: var(--muted); font-size: 13px; }
-
-    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 600ms ease, transform 600ms ease; }
-    .fade-up.is-visible { opacity: 1; transform: translateY(0); }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .fade-up, .btn, .nav-links a { transition: none; }
-      .btn:hover { transform: none; }
-    }
-
-    @media (max-width: 1080px) {
-      h1 { font-size: 48px; }
-      h2 { font-size: 36px; }
-      .hero, .section-head, .mvp-panel, .founder-grid, .contact-band, .footer-grid { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 780px) {
-      .container { padding: 0 16px; }
-      .nav { min-height: auto; padding: 12px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
-      .brand { min-width: 0; }
-      .nav-links { width: 100%; justify-content: flex-start; padding-bottom: 2px; }
-      .nav-links a { padding: 10px 9px; }
-      .hero { padding-top: 42px; }
-      h1 { font-size: 35px; line-height: 1.1; }
-      .headline-line { display: inline; }
-      .headline-line + .headline-line::before { content: ' '; }
-      h2 { font-size: 29px; }
-      .hero-lead, .section-copy { font-size: 16px; }
-      .metric-grid, .grid-2, .grid-3, .grid-4, .split-list, .facts-grid { grid-template-columns: 1fr; }
-      .cred-strip { align-items: stretch; flex-direction: column; padding: 14px; }
-      .cred-item { padding: 10px 12px; white-space: normal; text-align: center; }
-      .cred-item + .cred-item::before { content: ''; left: 50%; top: -2px; width: 42px; height: 1px; background: rgba(248,213,138,0.35); transform: translateX(-50%); }
-      .dashboard-head { align-items: flex-start; flex-direction: column; gap: 10px; }
-      .discovery-lead, .mvp-summary, .site-footer, .quote-panel { padding: 22px; }
-      .quote-panel { grid-template-columns: 1fr; }
-      .quote-panel::before { width: 76px; height: 3px; min-height: 3px; }
-      .light-band { margin-left: -16px; margin-right: -16px; padding: 52px 16px; }
-      .discovery-lead p, .quote-panel p { font-size: 20px; }
-      .mvp-summary h3, .founder-name { font-size: 25px; }
-      .step { grid-template-columns: 1fr; }
-      section.block { padding-top: 70px; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b48">
+  <meta name="description" content="Shariki is a Selfless Solutions venture-building initiative in Tanzania. Explore its case for supporting promising businesses from early traction toward growth capital.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shariki | Build the businesses that expand opportunity">
+  <meta property="og:description" content="A venture-building initiative of Selfless Solutions. Discover the gap Shariki addresses, the hands-on model, and the invitation to build its first platform.">
+  <meta property="og:url" content="https://boniphacemaruchu.github.io/shariki/">
+  <title>Shariki | A venture-building initiative of Selfless Solutions</title>
+  <link rel="icon" href="assets/selfless-logo.png" type="image/png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <div class='brand-line' aria-hidden='true'></div>
-  <div class='nav-wrap'>
-    <div class='container nav'>
-      <a class='brand' href='#top' aria-label='Shariki home'>
-        <div class='brand-mark' aria-hidden='true'><span>S</span></div>
-        <div>
-          <div class='brand-name'>Shariki</div>
-          <div class='brand-meta'>A Selfless Solutions initiative</div>
-        </div>
-      </a>
-      <nav class='nav-links' aria-label='Page sections'>
-        <a href='#clarity'>Clarity</a>
-        <a href='#discovery'>Discovery</a>
-        <a href='#mvp'>MVP</a>
-        <a href='#model'>Support</a>
-        <a href='#outcomes'>Outcomes</a>
-        <a href='#partners'>Partners</a>
-        <a href='#founder'>Founder</a>
-        <a href='#contact'>Contact</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="wordmark" href="#top" aria-label="Shariki, back to top"><span class="wordmark-name">SHARIKI</span><span class="wordmark-rule"></span><span class="wordmark-caption">A Selfless Solutions initiative</span></a>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false"><span>Menu</span><span class="menu-glyph" aria-hidden="true"></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="#why">The case</a><a href="#gap">The gap</a><a href="#model">The model</a><a href="#pilot">The pilot</a><a href="#vision">The vision</a>
+        <a class="nav-cta" href="#invitation">The invitation <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
-  </div>
+  </header>
 
-  <main id='top'>
-    <div class='container'>
-      <section class='hero' aria-labelledby='hero-title'>
-        <div class='hero-copy fade-up'>
-          <div class='badge'>A Selfless Solutions venture-building initiative</div>
-          <h1 id='hero-title'><span class='headline-line'>Helping promising Tanzanian entrepreneurs</span><span class='headline-line'>turn early traction into stronger, growth-ready,</span><span class='headline-line'>access-expanding businesses.</span></h1>
-          <p class='hero-lead'>Shariki is a hands-on venture-building MVP under Selfless Solutions. We support selected entrepreneurs with execution discipline, financial systems, customer learning, partnerships, and accountability so their businesses can grow beyond survival.</p>
-          <p class='parent-statement'>Built under Selfless Solutions to expand education and economic opportunity in Tanzania.</p>
-          <div class='hero-actions'>
-            <a class='btn btn-primary' href='#model'>Explore the model</a>
-            <a class='btn btn-secondary' href='#contact'>Start a conversation</a>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="parent-signature"><img src="assets/selfless-logo.png" alt="Selfless Solutions" width="2048" height="588"></div>
+          <div class="eyebrow on-dark"><span class="eyebrow-line"></span> A working vision · September 2026</div>
+          <h1 id="hero-title">Build the businesses that can <em>expand opportunity.</em></h1>
+          <p class="hero-intro">Shariki works alongside promising Tanzanian entrepreneurs to turn early traction into stronger companies, ready for the right capital and a wider market.</p>
+          <div class="hero-actions"><a class="button button-gold" href="#why">Explore the case <span aria-hidden="true">↘</span></a><a class="text-link light-link" href="assets/shariki-programme-profile.pdf" target="_blank" rel="noopener">Read the programme profile <span aria-hidden="true">↗</span></a></div>
+          <p class="hero-footnote">A venture-building initiative of Selfless Solutions. The first pilot is in development in Arusha.</p>
+        </div>
+        <div class="hero-graphic" aria-label="Shariki's focus: early traction, venture building, capital readiness, and growth">
+          <div class="hero-graphic-top"><span>THE SHARIKI BRIDGE</span><span>01 / 04</span></div>
+          <div class="bridge-visual">
+            <div class="bridge-left"><span class="smallcaps">The starting point</span><strong>Real customers.<br>Early traction.</strong></div>
+            <div class="bridge-span" aria-hidden="true"><span class="bridge-track"></span><span class="bridge-point a"></span><span class="bridge-point b"></span><span class="bridge-point c"></span></div>
+            <div class="bridge-right"><span class="smallcaps">The destination</span><strong>Stronger company.<br>Right capital.</strong></div>
           </div>
-          <p class='hero-note'>Starting small in Arusha, Shariki is built for philanthropists, mentors, ecosystem builders, potential partners, and aligned supporters who want to help serious local founders become more durable.</p>
+          <div class="hero-graphic-bottom"><span>Discovery</span><span>Venture building</span><span>Capital connection</span></div>
+          <p>After meaningful traction. Before serious growth capital.</p>
         </div>
+      </div>
+      <div class="hero-index wrap"><span>Scroll to explore</span><span class="scroll-mark" aria-hidden="true"></span><span>From the prosperity question to the first pilot</span></div>
+    </section>
 
-        <aside class='dashboard fade-up' aria-label='Shariki MVP snapshot'>
-          <div class='dashboard-head'>
-            <div class='dashboard-title'>First MVP snapshot</div>
-            <div class='status-chip'>Pilot stage</div>
+    <section class="section section-light" id="why" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="section-top"><span class="section-number">01 / THE CASE</span><span class="section-overline">Why business building matters</span></div>
+        <div class="statement-layout">
+          <h2 id="why-title">How can opportunity grow <span class="gold-underline">from within?</span></h2>
+          <div class="statement-copy"><p>Education and direct support can change individual lives. Broad, durable prosperity also needs businesses that make useful products more accessible, create productive work, and strengthen the economic systems around them.</p><p>Shariki is shaped by the market-creating innovation thesis in <cite>The Prosperity Paradox</cite>. It asks how practical support can help promising businesses serve people who are currently excluded by price, complexity, or availability.</p></div>
+        </div>
+        <div class="logic-explorer" aria-labelledby="logic-title">
+          <div class="logic-head"><div><span class="mini-label">Explore the logic</span><h3 id="logic-title">From unmet need to wider opportunity</h3></div><p>Select a stage to see the connection.</p></div>
+          <div class="logic-tabs" role="tablist" aria-label="Market creation stages">
+            <button class="logic-tab active" id="logic-tab-0" role="tab" aria-selected="true" aria-controls="logic-panel" data-logic="0"><span>01</span> Exclusion</button>
+            <button class="logic-tab" id="logic-tab-1" role="tab" aria-selected="false" aria-controls="logic-panel" data-logic="1" tabindex="-1"><span>02</span> Access</button>
+            <button class="logic-tab" id="logic-tab-2" role="tab" aria-selected="false" aria-controls="logic-panel" data-logic="2" tabindex="-1"><span>03</span> New market</button>
+            <button class="logic-tab" id="logic-tab-3" role="tab" aria-selected="false" aria-controls="logic-panel" data-logic="3" tabindex="-1"><span>04</span> Wider gains</button>
           </div>
-          <div class='metric-grid'>
-            <div class='metric'><strong>Arusha</strong><span>Local starting point for deep learning and practical support.</span></div>
-            <div class='metric'><strong>3-5</strong><span>Selected entrepreneurs in the first focused cohort.</span></div>
-            <div class='metric'><strong>90</strong><span>Days of hands-on venture-building support.</span></div>
-            <div class='metric'><strong>Free</strong><span>Support for selected founders with real traction.</span></div>
-          </div>
-          <div class='focus-list'>
-            <div class='focus-item'><div class='focus-no'>01</div><div><h3>Execution discipline</h3><p>Priorities, scorecards, weekly cadence, and follow-through.</p></div></div>
-            <div class='focus-item'><div class='focus-no'>02</div><div><h3>Financial readiness</h3><p>Tracking, costing, reporting, and decision systems.</p></div></div>
-            <div class='focus-item'><div class='focus-no'>03</div><div><h3>Market and partner access</h3><p>Practical doors to customers, buyers, mentors, and institutions.</p></div></div>
-          </div>
-        </aside>
-      </section>
-
-      <section class='cred-strip fade-up' aria-label='Shariki credibility summary'>
-        <div class='cred-item'>Under Selfless Solutions</div>
-        <div class='cred-item'>Arusha MVP</div>
-        <div class='cred-item'>3-5 founders</div>
-        <div class='cred-item'>90-day support sprint</div>
-      </section>
-
-      <section id='clarity' class='block light-band'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>What Shariki is</div><h2>A practical bridge between early traction and growth readiness.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Shariki is not trying to be everything in the entrepreneurship ecosystem. It is a focused venture-building MVP for a small number of serious entrepreneurs who need the execution layer that helps real businesses become stronger.</p>
-        </div>
-        <div class='split-list'>
-          <article class='card gold-edge fade-up'>
-            <div class='mini-label'>Shariki is</div>
-            <ul class='check-list'>
-              <li>Hands-on business-building support for selected entrepreneurs with traction</li>
-              <li>A practical execution partner for founders working through real bottlenecks</li>
-              <li>A small MVP designed to learn deeply before scaling</li>
-              <li>A bridge between early traction and growth readiness</li>
-            </ul>
-          </article>
-          <article class='card dark fade-up'>
-            <div class='mini-label'>Shariki is not</div>
-            <ul class='check-list not-list'>
-              <li>Not a generic training program</li>
-              <li>Not a grant fund</li>
-              <li>Not a startup competition</li>
-              <li>Not a broad incubator accepting everyone</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id='discovery' class='block'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>What discovery revealed</div><h2>The missing middle is execution.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Entrepreneur discovery showed that the main gap is not lack of ideas. Many local founders are already active, capable, and serving real customers. The harder gap is turning early traction into disciplined, durable growth.</p>
-        </div>
-        <div class='discovery-lead fade-up'><p>The biggest gap is not lack of ideas. It is the execution layer between early traction and durable growth.</p></div>
-        <div class='quote-panel fade-up'>
-          <div><p>The gap is not ambition. The gap is the operating support around serious founders.</p><span>Shariki is designed to provide practical proximity, accountability, and trusted connections for entrepreneurs serving underserved communities.</span></div>
-        </div>
-        <div class='grid-3'>
-          <article class='card gold-edge fade-up'><h3>Execution capacity</h3><p>Founders are active and committed, but many lack repeatable systems, clear priorities, and disciplined follow-through.</p></article>
-          <article class='card gold-edge fade-up'><h3>Financial readiness</h3><p>Many businesses need stronger tracking, costing, reporting, and decision-making before they can responsibly pursue future growth.</p></article>
-          <article class='card gold-edge fade-up'><h3>Market access</h3><p>Founders often need practical support to reach customers, buyers, suppliers, institutions, and distribution channels.</p></article>
-          <article class='card gold-edge fade-up'><h3>Team and operations</h3><p>Several businesses are constrained by team capacity, role clarity, quality control, and operational consistency.</p></article>
-          <article class='card gold-edge fade-up'><h3>Partnership readiness</h3><p>Many founders need help becoming credible enough for funders, buyers, mentors, and strategic partners.</p></article>
-          <article class='card gold-edge fade-up'><h3>Reporting readiness</h3><p>Shariki helps founders build the evidence, records, and basic compliance habits that make future support easier to justify.</p></article>
-        </div>
-      </section>
-
-      <section id='fit' class='block'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>Who Shariki is looking for</div><h2>Serious entrepreneurs with real customers and a clear growth bottleneck.</h2><div class='rule'></div></div>
-          <p class='section-copy'>The first MVP should prioritize founders who are already doing the hard work of building, selling, learning, and serving people. Shariki adds discipline, support, and connections where they can make the biggest difference.</p>
-        </div>
-        <article class='card fade-up'>
-          <ul class='check-list'>
-            <li>Have an existing business, product, or service already serving real customers</li>
-            <li>Are building something that can expand access for underserved communities</li>
-            <li>Have a clear growth bottleneck that hands-on support can help solve</li>
-            <li>Are coachable, committed, and willing to meet regularly</li>
-            <li>Can share basic business data and track progress</li>
-            <li>Show potential to create jobs, improve affordability, strengthen local supply chains, or reach people currently left out</li>
-          </ul>
-        </article>
-      </section>
-
-      <section id='mvp' class='block'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>The first Shariki MVP</div><h2>Start in Arusha. Support a few founders well. Learn before scaling.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Shariki should be understood as early and focused. The first pilot is meant to test whether close, practical support can help promising businesses become more disciplined, more resilient, and more ready for future growth.</p>
-        </div>
-        <div class='mvp-panel'>
-          <div class='mvp-summary fade-up'>
-            <h3>A small 90-day venture-building pilot</h3>
-            <p>Shariki will begin with a small 90-day venture-building pilot in Arusha, supporting 3-5 selected entrepreneurs. The goal is to build proof, learning, systems, and founder outcomes before expanding.</p>
-          </div>
-          <div class='facts-grid fade-up'>
-            <div class='fact'><span>Location</span><strong>Arusha</strong></div>
-            <div class='fact'><span>Stage</span><strong>MVP / pilot</strong></div>
-            <div class='fact'><span>Cohort size</span><strong>3-5 entrepreneurs</strong></div>
-            <div class='fact'><span>Duration</span><strong>90 days</strong></div>
-            <div class='fact'><span>Support type</span><strong>Free hands-on support</strong></div>
-            <div class='fact'><span>Goal</span><strong>Proof, systems, learning, outcomes</strong></div>
+          <div class="logic-panel" id="logic-panel" role="tabpanel" aria-labelledby="logic-tab-0" tabindex="0">
+            <div class="logic-illustration" aria-hidden="true"><span class="logic-ring one"></span><span class="logic-ring two"></span><span class="logic-ring three"></span><b id="logic-symbol">01</b></div>
+            <div><span class="panel-kicker" id="logic-kicker">THE STARTING CONDITION</span><h4 id="logic-heading">An important need remains unmet</h4><p id="logic-description">People may want a product or service but cannot obtain it reliably because it costs too much, is too complicated, or is not available where they live.</p></div>
           </div>
         </div>
-      </section>
+        <p class="source-note">Conceptual framework adapted from Clayton M. Christensen, Efosa Ojomo and Karen Dillon, <cite>The Prosperity Paradox</cite>. This diagram presents a theory of change, not measured results from Shariki.</p>
+      </div>
+    </section>
 
-      <section id='model' class='block'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>How the support works</div><h2>A practical cadence for building stronger businesses.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Shariki's work is direct, consistent, and evidence-oriented. The pilot focuses on what founders can improve week by week: numbers, customers, priorities, operating habits, and the right relationships.</p>
+    <section class="section section-cream" id="gap" aria-labelledby="gap-title">
+      <div class="wrap">
+        <div class="section-top"><span class="section-number">02 / THE GAP</span><span class="section-overline">A specific point in the journey</span></div>
+        <div class="section-heading"><h2 id="gap-title">Promising businesses can get stuck in the <em>missing middle.</em></h2><p>They have customers and a visible opportunity. Yet the company may still lack the focus, records, leadership and operating systems needed to grow responsibly or attract serious capital.</p></div>
+        <div class="gap-map" aria-label="Early support, Shariki's venture-building gap, and growth capital">
+          <div class="gap-stage"><span>BEFORE</span><h3>Early support</h3><p>Ideas, training, mentorship, competitions and small grants can help founders begin.</p></div>
+          <div class="gap-stage gap-focus"><div class="gap-label">THE SHARIKI FOCUS</div><span>BETWEEN</span><h3>Traction to readiness</h3><p>Work alongside the founder to clarify the strongest opportunity and build the company around it.</p></div>
+          <div class="gap-stage"><span>AFTER</span><h3>Growth capital</h3><p>Investors and lenders need credible financials, validated demand, capable teams and a clear use of funds.</p></div>
         </div>
-        <div class='steps'>
-          <div class='step fade-up'><div class='step-no'>01</div><div><h3>Diagnose</h3><p>Understand the business, bottlenecks, numbers, customers, founder priorities, and growth constraints.</p></div></div>
-          <div class='step fade-up'><div class='step-no'>02</div><div><h3>Build</h3><p>Support weekly execution through priorities, scorecards, financial discipline, customer learning, and operating systems.</p></div></div>
-          <div class='step fade-up'><div class='step-no'>03</div><div><h3>Connect</h3><p>Open doors to mentors, partners, suppliers, customers, and ecosystem actors who can remove real constraints to growth.</p></div></div>
-          <div class='step fade-up'><div class='step-no'>04</div><div><h3>Document</h3><p>Track progress, founder learning, business improvements, and evidence for future partners.</p></div></div>
-        </div>
-      </section>
+        <div class="founder-insight"><span class="quote-mark" aria-hidden="true">“</span><p>Customers are buying. Demand is emerging. But the founder is still managing through improvisation, incomplete records and a small team.</p><span class="insight-label">THE FOUNDER IN THE MIDDLE</span></div>
+      </div>
+    </section>
 
-      <section id='outcomes' class='block'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>What success looks like</div><h2>Progress should show up in founder discipline and community access.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Shariki should not measure success by activity alone. The early proof should come from stronger founder behavior, clearer business systems, and practical signs that the model can improve access for people who are often left out.</p>
+    <section class="section section-navy" id="model" aria-labelledby="model-title">
+      <div class="wrap">
+        <div class="section-top on-dark"><span class="section-number">03 / THE MODEL</span><span class="section-overline">A connected path, tailored to each company</span></div>
+        <div class="section-heading"><h2 id="model-title">Find the signal. Build the company. Connect the capital.</h2><p>Shariki’s model brings three capabilities together. Its work is hands-on and shaped by the needs of each selected business.</p></div>
+        <div class="model-grid">
+          <article class="model-step"><span class="model-index">01</span><div class="model-line"></div><h3>Discover & select</h3><p>Find operating businesses with real customers, a promising market opportunity and founders ready to build.</p><button type="button" class="model-more" aria-expanded="false" aria-controls="model-detail-1">What we look for <span aria-hidden="true">+</span></button><div class="model-detail" id="model-detail-1" hidden><p>Customer demand, evidence of what already works, founder ambition and openness, opportunity size, potential to expand access, and where Shariki can add meaningful value.</p></div></article>
+          <article class="model-step"><span class="model-index">02</span><div class="model-line"></div><h3>Build the venture</h3><p>Identify the strongest signal, test the model, resolve bottlenecks and strengthen the team, systems and economics.</p><button type="button" class="model-more" aria-expanded="false" aria-controls="model-detail-2">How support works <span aria-hidden="true">+</span></button><div class="model-detail" id="model-detail-2" hidden><p>A dedicated Growth Associate works alongside the entrepreneur, with guidance from experienced consultants and specialists where needed. The first pilot offers three months of free, tailored support.</p></div></article>
+          <article class="model-step"><span class="model-index">03</span><div class="model-line"></div><h3>Prepare & connect</h3><p>Build a credible case for the right type and amount of financing, then connect the venture with suitable partners.</p><button type="button" class="model-more" aria-expanded="false" aria-controls="model-detail-3">What readiness means <span aria-hidden="true">+</span></button><div class="model-detail" id="model-detail-3" hidden><p>Clear financial information, evidence of demand, a capable team, a focused growth plan and a defined use of capital. A connection does not guarantee financing.</p></div></article>
         </div>
-        <div class='grid-2'>
-          <article class='card gold-edge fade-up'>
-            <div class='mini-label'>Founder and venture outcomes</div>
-            <h3>Stronger businesses with better growth readiness.</h3>
-            <p>Shariki looks for practical improvements that make a founder more credible, investable, disciplined, and ready for the right next step.</p>
-            <div class='pill-row'>
-              <span class='pill'>Revenue growth</span><span class='pill'>Stronger financial systems</span><span class='pill'>Improved execution</span><span class='pill'>Better customer understanding</span><span class='pill'>Follow-on partnerships</span><span class='pill'>Investment readiness</span><span class='pill'>Healthier survival prospects</span>
-            </div>
-          </article>
-          <article class='card gold-edge fade-up'>
-            <div class='mini-label'>Community and platform outcomes</div>
-            <h3>Clearer evidence that the model can repeat.</h3>
-            <p>Shariki also tracks whether stronger businesses can improve access, jobs, supplier opportunity, service quality, and the support infrastructure around founders.</p>
-            <div class='pill-row'>
-              <span class='pill'>Underserved people reached</span><span class='pill'>Jobs created</span><span class='pill'>Supplier income opportunities</span><span class='pill'>Service quality improved</span><span class='pill'>Stronger mentor networks</span><span class='pill'>Repeatable platform tools</span><span class='pill'>Evidence the model can repeat</span>
-            </div>
-          </article>
-        </div>
-      </section>
+        <div class="network-band"><span>ONE DEVELOPMENT PLAN</span><p>A core Shariki team coordinates the work. Finance, legal, industry and capital partners contribute expertise when the venture needs it.</p></div>
+      </div>
+    </section>
 
-      <section id='partners' class='block light-band'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>How partners can support Shariki</div><h2>Useful support is specific, practical, and close to the founder's real constraints.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Shariki is a platform for aligned people and institutions to help promising founders in targeted ways. The strongest partners bring proximity, expertise, relationships, and patient commitment to the first MVP.</p>
+    <section class="section section-light" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-top"><span class="section-number">04 / THE WORK</span><span class="section-overline">What changes inside a venture</span></div>
+        <div class="section-heading"><h2 id="work-title">Venture building starts with <em>what already works.</em></h2><p>Many founders pursue several products or customers to survive. Shariki helps test which signal has the strongest evidence, then strengthens the company around that opportunity.</p></div>
+        <div class="transformation">
+          <div class="transformation-column before"><span class="smallcaps">STARTING POINT</span><h3>Survival mode</h3><ul><li>Many products and customer groups</li><li>Incomplete information</li><li>Founder carrying too much</li><li>Growth choices made under pressure</li></ul></div>
+          <div class="transformation-center"><span class="smallcaps">HANDS-ON WORK</span><ol><li>Test the strongest signal</li><li>Refine the customer and offer</li><li>Validate the economics</li><li>Strengthen the team and systems</li></ol></div>
+          <div class="transformation-column after"><span class="smallcaps">INTENDED DIRECTION</span><h3>Growth readiness</h3><ul><li>Focused growth model</li><li>Credible financial information</li><li>Capable leadership and operations</li><li>Clear use of capital</li></ul></div>
         </div>
-        <div class='grid-4'>
-          <article class='card gold-edge fade-up'><h3>Refer entrepreneurs</h3><p>Help identify serious founders already building something meaningful.</p></article>
-          <article class='card gold-edge fade-up'><h3>Mentor founders</h3><p>Offer targeted expertise in finance, operations, sales, legal, technology, agriculture, health, tourism, or leadership.</p></article>
-          <article class='card gold-edge fade-up'><h3>Open market doors</h3><p>Connect founders to customers, buyers, suppliers, institutions, and distribution channels.</p></article>
-          <article class='card gold-edge fade-up'><h3>Support the platform</h3><p>Help Shariki build the systems, tools, relationships, and evidence needed to make the model repeatable.</p></article>
-        </div>
-      </section>
+        <p class="under-figure">The work is tailored. The standard is consistent: evidence, focus, capability and readiness to scale.</p>
+      </div>
+    </section>
 
-      <section id='founder' class='block'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>Founder section</div><h2>Led locally, with a bias toward practical execution.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Shariki is led by Boniphace Maruchu, a Tanzanian operator building from practical experience across finance, accounting, nonprofit accountability, tourism operations, partnerships, and disciplined systems-building.</p>
-        </div>
-        <div class='founder-grid'>
-          <article class='card gold-edge fade-up'>
-            <div class='mini-label'>Program lead</div>
-            <h3 class='founder-name'>Boniphace Maruchu</h3>
-            <p>The work is grounded in local proximity and the steady discipline of helping founders move from conversation to action. Shariki's first test is deliberately close to the businesses, customers, and relationships that shape founder progress in Tanzania.</p>
-          </article>
-          <article class='card fade-up'>
-            <div class='mini-label'>What this leadership brings</div>
-            <ul class='check-list'>
-              <li>Local proximity and practical founder sourcing</li>
-              <li>Venture diagnostics grounded in real operating constraints</li>
-              <li>Accountability systems and disciplined follow-through</li>
-              <li>Useful coordination with mentors, partners, and ecosystem actors</li>
-              <li>Long-term commitment to building something durable in Tanzania</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id='contact' class='block'>
-        <div class='section-head fade-up'>
-          <div><div class='section-label'>Contact</div><h2>If this resonates, let's start a conversation.</h2><div class='rule'></div></div>
-          <p class='section-copy'>Shariki is in its first MVP stage under Selfless Solutions, Tanzania. The right next step is a practical conversation about founders, mentors, ecosystem relationships, and the early proof this model should build.</p>
-        </div>
-        <div class='contact-band'>
-          <article class='card gold-edge fade-up'>
-            <h3>Start with a focused conversation.</h3>
-            <p>Reach out if you know a serious entrepreneur, can mentor a founder, can open a market door, or want to help build a stronger support platform for access-expanding businesses in Tanzania.</p>
-          </article>
-          <article class='card fade-up'>
-            <div class='contact-lines'>
-              <div class='contact-line'><div class='contact-key'>E</div><a href='mailto:boniphace.maruchu@selflesssolutions.org'>boniphace.maruchu@selflesssolutions.org</a></div>
-              <div class='contact-line'><div class='contact-key'>P</div><a href='tel:+255685727999'>+255 685 727 999</a></div>
-              <div class='contact-line'><div class='contact-key'>SS</div><span>Shariki as a program under Selfless Solutions, Tanzania</span></div>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <footer class='site-footer fade-up'>
-        <div class='footer-rule'></div>
-        <div class='footer-grid'>
-          <div>
-            <div class='footer-brand'>Shariki</div>
-            <div class='footer-kicker'>A venture-building MVP under Selfless Solutions</div>
-            <p>Supporting promising Tanzanian entrepreneurs to build stronger, access-expanding businesses.</p>
-          </div>
-          <div class='footer-contact'>
-            <a href='mailto:boniphace.maruchu@selflesssolutions.org'>boniphace.maruchu@selflesssolutions.org</a>
-            <a href='tel:+255685727999'>+255 685 727 999</a>
+    <section class="section section-cream" id="pilot" aria-labelledby="pilot-title">
+      <div class="wrap">
+        <div class="section-top"><span class="section-number">05 / THE PILOT</span><span class="section-overline">Current development stage</span></div>
+        <div class="pilot-layout">
+          <div><span class="status-label"><span class="status-dot"></span> PILOT IN DEVELOPMENT</span><h2 id="pilot-title">Start small. Learn deeply. Build evidence.</h2><p class="pilot-lead">Shariki is developing its first venture-building pilot in Arusha. The programme profile describes three months of free support for a small number of selected businesses.</p><p>The pilot is designed to test whether intensive, tailored work can move operating companies toward stronger systems and investment readiness. The long-term prosperity thesis will require years of evidence across ventures.</p></div>
+          <div class="pilot-board" aria-label="What the pilot will test">
+            <div class="board-heading"><span>WHAT THE FIRST TEST MUST SHOW</span><span>01—03</span></div>
+            <div class="board-row"><span>01</span><div><h3>Selection</h3><p>Can Shariki identify ventures with real demand and meaningful growth potential?</p></div></div>
+            <div class="board-row"><span>02</span><div><h3>Delivery</h3><p>Can close venture-building support produce documented improvements?</p></div></div>
+            <div class="board-row"><span>03</span><div><h3>Readiness</h3><p>Can the venture make a more credible case for suitable capital?</p></div></div>
           </div>
         </div>
-        <div class='footer-meta'>Selfless Solutions · Tanzania</div>
-      </footer>
-    </div>
+        <div class="pilot-clarity"><strong>Current scope</strong><span>Discovery and selection · Tailored venture building · Capital readiness and connection</span></div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="vision" aria-labelledby="vision-title">
+      <div class="wrap">
+        <div class="section-top"><span class="section-number">06 / THE VISION</span><span class="section-overline">Built in stages, guided by evidence</span></div>
+        <div class="section-heading"><h2 id="vision-title">A platform that can help more companies grow.</h2><p>The first pilot tests the work. Each later stage depends on evidence, capacity and appropriate governance. These are planned directions, not services or returns already achieved.</p></div>
+        <div class="roadmap" aria-label="Shariki development stages">
+          <div class="roadmap-item now"><span class="roadmap-num">01</span><div><span class="roadmap-state">CURRENT PRIORITY</span><h3>Prove the work</h3><p>Select a small portfolio and document whether hands-on support moves companies toward readiness.</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">02</span><div><span class="roadmap-state">NEXT</span><h3>Build the network</h3><p>Add specialists and investor relationships in response to the portfolio’s real needs.</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">03</span><div><span class="roadmap-state">FUTURE</span><h3>Repeat the model</h3><p>Codify selection, diagnostics, delivery, measurement and fair financial participation.</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">04</span><div><span class="roadmap-state">FUTURE</span><h3>Consider direct capital</h3><p>Only after the model, legal structure, governance and investment discipline are ready.</p></div></div>
+          <div class="roadmap-item"><span class="roadmap-num">05</span><div><span class="roadmap-state">LONG TERM</span><h3>Expand with evidence</h3><p>Develop more venture builders and grow beyond Arusha across Tanzania, then East Africa.</p></div></div>
+        </div>
+        <div class="vision-two-up">
+          <div><span class="mini-label">CAPITAL STRATEGY</span><h3>Connect first. Invest later.</h3><p>For now, Shariki aims to prepare companies for financing from existing lenders, investors and strategic partners. Direct investment by Shariki is a later possibility that would need separate safeguards.</p></div>
+          <div><span class="mini-label">SUSTAINABILITY HYPOTHESIS</span><h3>Value created can help fund future work.</h3><p>Philanthropy can fund the initial platform and early risk. Fees, profit sharing, equity, consulting or eventual investment returns are options to test over time. None is presented here as current revenue.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-navy impact-section" id="impact" aria-labelledby="impact-title">
+      <div class="wrap">
+        <div class="section-top on-dark"><span class="section-number">07 / EVIDENCE</span><span class="section-overline">How progress will be judged</span></div>
+        <div class="section-heading"><h2 id="impact-title">Success must show up beyond the pitch.</h2><p>Each level requires different evidence. The first pilot can establish delivery and readiness. Wider market creation can only be assessed after ventures grow and reach more people.</p></div>
+        <div class="impact-ladder">
+          <div class="impact-row"><span>01</span><h3>Stronger venture</h3><p>Sharper model, better team and systems, credible economics, clear growth plan.</p></div>
+          <div class="impact-row"><span>02</span><h3>Right capital</h3><p>Investment readiness, suitable financing, disciplined use of funds.</p></div>
+          <div class="impact-row"><span>03</span><h3>Durable growth</h3><p>Customers, revenue, capacity, jobs, suppliers and long-term survival.</p></div>
+          <div class="impact-row"><span>04</span><h3>Market creation</h3><p>People previously excluded gain access while local economic capability grows.</p></div>
+        </div>
+        <p class="impact-caveat">These are intended measures. Shariki is not claiming completed pilot outcomes or national impact.</p>
+      </div>
+    </section>
+
+    <section class="section invitation" id="invitation" aria-labelledby="invitation-title">
+      <div class="wrap invitation-grid">
+        <div><div class="section-top"><span class="section-number">08 / THE INVITATION</span></div><h2 id="invitation-title">Help build the institution that builds the companies.</h2><p>An initial build-and-test grant would support the people and platform needed to test Shariki’s model. It is a request for venture-building capacity, specialist access, systems and learning, rather than an investment pool.</p><p class="funding-note">The funding amount and grant period are being finalized alongside the detailed personnel and shared-cost budget.</p></div>
+        <div class="invitation-side"><span class="side-title">WHAT SUPPORT CAN ENABLE</span><div><span>01</span><strong>Leadership</strong><p>Direction, selection and accountability for the pilot.</p></div><div><span>02</span><strong>Delivery</strong><p>Close work with founders and timely specialist support.</p></div><div><span>03</span><strong>Systems & learning</strong><p>Documentation, measurement and a repeatable foundation.</p></div><a class="button button-gold" href="mailto:boniphace.maruchu@selflesssolutions.org?subject=Conversation%20about%20Shariki">Start a conversation <span aria-hidden="true">↗</span></a><a class="text-link" href="assets/shariki-programme-profile.pdf" target="_blank" rel="noopener">Read the programme profile <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('is-visible');
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
-
-    const links = Array.from(document.querySelectorAll('.nav-links a'));
-    const sections = links.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-
-    const setActive = () => {
-      const y = window.scrollY + 132;
-      let current = sections[0] ? sections[0].id : '';
-      sections.forEach((section) => {
-        if (section.offsetTop <= y) current = section.id;
-      });
-      links.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === '#' + current);
-      });
-    };
-
-    window.addEventListener('scroll', setActive, { passive: true });
-    setActive();
-  </script>
+  <footer class="site-footer"><div class="wrap footer-main"><div><img src="assets/selfless-logo.png" alt="Selfless Solutions" width="260" height="75"><p>Shariki is a venture-building initiative of Selfless Solutions in Tanzania.</p></div><div class="footer-links"><a href="mailto:boniphace.maruchu@selflesssolutions.org">boniphace.maruchu@selflesssolutions.org</a><a href="assets/shariki-programme-profile.pdf" target="_blank" rel="noopener">Programme profile ↗</a><a href="#top">Back to top ↑</a></div></div><div class="wrap footer-bottom"><span>Shariki · Working vision, September 2026</span><span>Building Businesses. Together.</span></div></footer>
 </body>
 </html>
